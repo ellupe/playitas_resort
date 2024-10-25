@@ -525,23 +525,29 @@ iframe {
     }
 
     /* Ajustar las secciones de información */
-    .about, .about-extra, .information-extra {
+            .about-extra, .information-extra {
         padding: 20px 10px;
-        text-align: center;
     }
 
+    /* Alineación y ajuste de tablas */
     table {
         width: 100%;
+        border-collapse: collapse;
     }
 
     th, td {
+        display: block; /* Cada elemento se apila verticalmente */
+        width: 100%;
         padding: 10px;
+        text-align: center; /* Centrar texto y contenido */
     }
 
-    /* Ajustar las imágenes de las habitaciones */
-    table img {
+    /* Ajuste de las imágenes */
+    img.photo-item-2 {
         width: 100%;
-        height: auto;
+        height: auto; /* Mantener la proporción */
+        max-width: 300px; /* Limita el tamaño máximo de las imágenes */
+        margin: 0 auto; /* Centra las imágenes */
     }
 
     /* Contacto */
