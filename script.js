@@ -178,12 +178,14 @@ document.addEventListener("DOMContentLoaded", function() {
     dropdownBtn.addEventListener("click", function(event) {
         event.stopPropagation(); // Evita el cierre inmediato
         dropdownContent.classList.toggle("active");
+        console.log("Dropdown activado"); // Mensaje de depuración
     });
 
     // Ocultar el dropdown al hacer clic fuera
     window.addEventListener("click", function() {
         if (dropdownContent.classList.contains("active")) {
             dropdownContent.classList.remove("active");
+            console.log("Dropdown desactivado"); // Mensaje de depuración
         }
     });
 });
