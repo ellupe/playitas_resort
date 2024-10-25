@@ -8,45 +8,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <style>
-        /* Asegura que todo el contenedor ocupe el 100% del ancho y no haya desbordamiento */
-        body, .about-extra, .information-extra, table {
+        /* Asegura que el contenido esté alineado correctamente */
+        .content-wrapper {
             width: 100%;
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 0;
-            box-sizing: border-box; /* Asegura que el padding y el margin no provoquen desbordamiento */
+            max-width: 1200px; /* Ajuste para pantallas grandes */
+            margin: 0 auto; /* Centra el contenido */
+            padding: 0 15px; /* Añade relleno para que no se pegue a los bordes */
+            box-sizing: border-box;
         }
 
-        /* Ajuste de las celdas de la tabla para evitar desbordamientos */
-        th, td {
-            word-wrap: break-word;
-            padding: 10px;
-            text-align: center;
-            vertical-align: top;
-            box-sizing: border-box; /* Controla el espacio dentro de las celdas */
-        }
-
-        /* Asegura que las imágenes sean responsivas */
-        img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Ajuste específico para pantallas pequeñas */
+        /* Para dispositivos móviles, asegura que el contenido esté correctamente alineado */
         @media (max-width: 768px) {
-            table, th, td {
-                display: block;
-                width: 100%;
+            .content-wrapper {
+                padding: 0 10px; /* Ajusta el relleno para móviles */
             }
 
-            .about-extra, .information-extra {
+            table {
+                width: 100%; /* Asegura que la tabla ocupe todo el ancho disponible */
+                margin: 0; /* Elimina cualquier margen que pueda causar desplazamiento */
+            }
+
+            th, td {
+                text-align: left; /* Asegura que el texto esté alineado a la izquierda en móviles */
                 padding: 10px;
-            }
-
-            img {
-                max-width: 100%;
-                height: auto;
             }
         }
     </style>
@@ -74,49 +58,52 @@
         </div>
     </header>
 
-    <section id="about" class="about-extra">
-        <h2 style="text-align: center;">Información</h2><br>
-        <table>
-            <tr>
-                <th><strong>Estudios</strong></th>
-                <th><strong>Apartamentos</strong></th>
-            </tr>
-            <tr>
-                <td>
-                    <p>Los <strong>estudios</strong> son diáfanos, diseñados en dos niveles y tienen capacidad para <strong>cuatro huéspedes</strong>. 
-                    Cuentan con una pequeña cocina, baño y balcón con vistas al mar.</p>
-                </td>
-                <td>
-                    <p>Los <strong>apartamentos</strong> incluyen un dormitorio y un salón independiente, ideales para familias. 
-                    Ofrecen espacio extra y todas las comodidades para una estancia confortable.</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <img src="img/Aparthotel_foto1.jpg" alt="Vista del estudio">
-                </td>
-                <td>
-                    <img src="img/Aparthotel_foto2.jpg" alt="Vista del apartamento">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <img src="img/Aparthotel_foto3.jpg" alt="Vista del estudio">
-                </td>
-                <td>
-                    <img src="img/Aparthotel_foto4.jpg" alt="Vista del apartamento">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <img src="img/Aparthotel_foto5.jpg" alt="Vista del estudio">
-                </td>
-                <td>
-                    <img src="img/Aparthotel_foto6.jpg" alt="Vista del apartamento">
-                </td>
-            </tr>
-        </table>
-    </section>
+    <!-- Envolvemos todo el contenido en un contenedor para alinear correctamente -->
+    <div class="content-wrapper">
+        <section id="about" class="about-extra">
+            <h2 style="text-align: center;">Información</h2><br>
+            <table>
+                <tr>
+                    <th><strong>Estudios</strong></th>
+                    <th><strong>Apartamentos</strong></th>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Los <strong>estudios</strong> son diáfanos, diseñados en dos niveles y tienen capacidad para <strong>cuatro huéspedes</strong>. 
+                        Cuentan con una pequeña cocina, baño y balcón con vistas al mar.</p>
+                    </td>
+                    <td>
+                        <p>Los <strong>apartamentos</strong> incluyen un dormitorio y un salón independiente, ideales para familias. 
+                        Ofrecen espacio extra y todas las comodidades para una estancia confortable.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/Aparthotel_foto1.jpg" alt="Vista del estudio">
+                    </td>
+                    <td>
+                        <img src="img/Aparthotel_foto2.jpg" alt="Vista del apartamento">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/Aparthotel_foto3.jpg" alt="Vista del estudio">
+                    </td>
+                    <td>
+                        <img src="img/Aparthotel_foto4.jpg" alt="Vista del apartamento">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/Aparthotel_foto5.jpg" alt="Vista del estudio">
+                    </td>
+                    <td>
+                        <img src="img/Aparthotel_foto6.jpg" alt="Vista del apartamento">
+                    </td>
+                </tr>
+            </table>
+        </section>
+    </div>
 
     <script src="script.js"></script>
 </body>
