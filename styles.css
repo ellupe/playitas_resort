@@ -5,6 +5,33 @@
     box-sizing: border-box;
 }
 
+/* Asegura que todo el contenido tenga un ancho máximo del 100% */
+body, table, section {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Ajuste específico para la sección de información */
+section.about-extra, section.information-extra {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box; /* Asegura que el padding no exceda el ancho total */
+    margin: 0;
+}
+
+table {
+    width: 100%; /* Asegura que las tablas ocupen el 100% del contenedor */
+    max-width: 100%; /* Previene que las tablas se desborden */
+    margin: 0 auto;
+}
+
+img {
+    width: 100%; /* Asegura que las imágenes sean responsivas */
+    height: auto;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
