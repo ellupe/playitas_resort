@@ -35,32 +35,31 @@ body {
 
 .nav {
     display: flex;
-    flex-direction: column; /* Cambia la dirección a columna para que el logotipo esté en el centro y los enlaces debajo */
-    align-items: center; /* Centra horizontalmente */
-    justify-content: center; /* Centra verticalmente */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
-    position: relative; /* Permite ajustar su posición */
-    background-color: #fff; /* Puedes cambiar el color de fondo si lo deseas */
+    position: relative;
+    background-color: #fff;
 }
 
-/* Para el logotipo */
+/* Logotipo */
 .logo {
     font-size: 2.5rem;
     font-family: 'Lobster', cursive;
-    text-align: center; /* Asegúrate de que el texto esté centrado */
-    font-weight: 700; /* O el peso de la fuente que prefieras */
-    margin-bottom: 20px; /* Espacio entre el logotipo y los enlaces de navegación */
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 20px;
     color: #000;
 }
 
-/* Para los enlaces de navegación */
+/* Enlaces de navegación */
 .nav-links {
     display: flex;
     list-style: none;
     gap: 20px;
 }
 
-/* Estilo para los enlaces */
 .nav-links li a {
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
@@ -70,7 +69,7 @@ body {
 }
 
 .nav-links li a:hover {
-    color: #0077cc; /* Color de hover */
+    color: #0077cc;
 }
 
 .hero-content h2 {
@@ -124,8 +123,8 @@ body {
 .carousel-container {
     position: relative;
     overflow: hidden;
-    width: 800px; /* Tamaño del carrusel (ancho) */
-    margin: 0 auto; /* Centrado del carrusel */
+    width: 800px;
+    margin: 0 auto;
 }
 
 .carousel {
@@ -134,14 +133,8 @@ body {
 }
 
 .carousel-item {
-    min-width: 800px; /* Tamaño de las imágenes (ancho) */   /* IMPORTANTE, CAMBIAMOS MANUALMENTE EL TAMAÑO DEL CAROUSEL */
-    height: 500px; /* Tamaño de las imágenes (altura) */
-    object-fit: cover;
-}
-
-.photo-item {
-    min-width: 50px; /* Tamaño de las imágenes (ancho) */   /* IMPORTANTE, CAMBIAMOS MANUALMENTE EL TAMAÑO DEL CAROUSEL */
-    height: 50px; /* Tamaño de las imágenes (altura) */
+    min-width: 800px;
+    height: 500px;
     object-fit: cover;
 }
 
@@ -155,9 +148,8 @@ body {
     font-size: 30px;
     padding: 10px;
     cursor: pointer;
-    z-index: 100; /* IMPORTANTE, ARREGLO EL BOTON DE RETROCESO DEL CAROUSEL */
+    z-index: 100;
 }
-
 
 .prev-btn {
     left: 10px;
@@ -225,7 +217,7 @@ footer {
     text-align: center;
     font-size: 14px;
     z-index: 1000;
-    display: none; /* Oculto por defecto */
+    display: none;
 }
 
 .cookie-popup a {
@@ -248,222 +240,201 @@ footer {
     background-color: #e1b30f;
 }
 
-/* Estilo para el menú desplegable */
+/* Media Queries */
+
+/* Smartphones (portrait & landscape) */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .hero, .hero2 {
+        height: 70vh;
+        background-size: cover;
+    }
+
+    .nav {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-content h2 {
+        font-size: 24px;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
+
+    .carousel-container {
+        width: 100%;
+    }
+}
+
+/* Tablets de baja resolución y teléfonos móviles en horizontal */
+@media (min-width: 481px) and (max-width: 767px) {
+    .nav {
+        padding: 15px;
+    }
+
+    .hero, .hero2 {
+        height: 80vh;
+    }
+
+    .hero-content h2 {
+        font-size: 36px;
+    }
+
+    .carousel-container {
+        width: 90%;
+    }
+
+    .prev-btn, .next-btn {
+        font-size: 20px;
+        padding: 8px;
+    }
+}
+
+/* Smartphones en modo horizontal */
+@media only screen and (min-width: 321px) {
+    .hero-content h2 {
+        font-size: 32px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 16px;
+    }
+
+    .carousel-item {
+        height: 400px;
+    }
+}
+
+/* Smartphones en modo vertical */
+@media only screen and (max-width: 320px) {
+    .hero, .hero2 {
+        height: 60vh;
+    }
+
+    .hero-content h2 {
+        font-size: 20px;
+    }
+
+    .nav {
+        padding: 5px;
+    }
+
+    .nav-links {
+        gap: 5px;
+    }
+
+    .carousel-container {
+        width: 100%;
+    }
+}
+
+/* iPads (portrait & landscape) */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .nav {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .hero, .hero2 {
+        height: 90vh;
+    }
+
+    .hero-content h2 {
+        font-size: 42px;
+    }
+
+    .carousel-container {
+        width: 80%;
+    }
+}
+
+/* Ordenadores de sobremesa y portátiles */
+@media only screen and (min-width: 1224px) {
+    .hero-content h2 {
+        font-size: 48px;
+    }
+
+    .carousel-container {
+        width: 60%;
+    }
+}
+
+/* Pantallas grandes */
+@media only screen and (min-width: 1824px) {
+    .hero-content h2 {
+        font-size: 56px;
+    }
+
+    .carousel-container {
+        width: 50%;
+    }
+}
+
+/* Estilos básicos para el contenedor del dropdown */
 .dropdown {
-    position: relative; /* Necesario para el menú desplegable */
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 .dropdown-content {
-    display: none; /* Oculta el contenido inicialmente */
-    position: absolute; /* Posiciona el contenido del menú desplegable */
-    background-color: white; /* Color de fondo del menú */
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Sombra para el menú */
-    z-index: 1; /* Asegura que el menú esté por encima de otros elementos */
-    padding: 10px 0; /* Espaciado interno del menú */
-    min-width: 150px; /* Ancho mínimo del menú desplegable */
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 250px; /* Ajusta según tus necesidades */
+    border: 1px solid #ddd;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 10px;
+    overflow-y: auto;
+    max-height: 300px; /* Para evitar que se salga de pantalla */
 }
 
-/* Centrar los enlaces dentro del menú desplegable */
-.dropdown-content a {
-    color: #000; /* Color del texto */
-    padding: 8px 16px; /* Espacio interno en los enlaces */
-    text-decoration: none; /* Sin subrayado */
-    display: block; /* Cada enlace ocupa toda la línea */
-    text-align: center; /* Centra el texto en los enlaces */
-}
-
-/* Estilo adicional para el hover */
-.dropdown-content a:hover {
-    background-color: #f1f1f1; /* Color de fondo al pasar el ratón */
-}
-
+/* Mostrar el contenido cuando el dropdown es activado */
 .dropdown:hover .dropdown-content {
-    display: block; /* Muestra el menú al pasar el ratón */
+    display: block;
 }
 
-.separacion {
-    margin-right: 50px; /* Espacio entre las partes */
-}
-
-
-
-.centered-line {
-    width: 30%;           /* Define el ancho de la línea (puedes cambiar el valor) */
-    margin: 0 auto;       /* Centra la línea horizontalmente */
-    border: 1px solid #333;  /* Estilo de la línea: grosor, tipo y color */
-}
-
-
-
-table {
+/* Estilos para las imágenes dentro del dropdown */
+.dropdown-content img {
     width: 100%;
-    border-collapse: collapse; /* Hace que las celdas compartan el mismo borde */
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: transform 0.3s ease; /* Para animación suave al hacer hover */
 }
 
-th, td {
-    border: 1px solid white; /* Define el color del borde como blanco */
-    padding: 8px; /* Añade espacio dentro de las celdas */
-    vertical-align: middle; /* Centra verticalmente el contenido */
+.dropdown-content img:hover {
+    transform: scale(1.05); /* Efecto de zoom en hover */
 }
 
-th {
-    background-color: #ffffff; /* Color de fondo de las cabeceras */
-    color: black; /* Texto en blanco para las cabeceras */
-    text-align: center; /* Centra horizontalmente el texto */
-}
+/* Media queries para mejorar la adaptabilidad en dispositivos móviles */
+@media (max-width: 600px) {
+    .dropdown-content {
+        min-width: 200px;
+        max-height: 200px;
+    }
 
-td {
-    background-color: #ffffff; /* Color de fondo para las celdas */
-    text-align: left; /* Centra horizontalmente el texto */
-}
-
-.map-container {
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    margin-top: 20px; /* Añade espacio superior opcional */
-}
-
-iframe {
-    width: 600px;  /* Ancho del mapa */
-    height: 450px; /* Alto del mapa */
-    border: 0;     /* Sin borde */
-}
-
-
-.ubicacion {
-    padding: 50px 20px;
-    background-color: #e6eeec;
-    text-align: center;
-}
-
-.ubicacion h2 {
-    font-size: 25px;
-    margin-bottom: 20px;
-}
-
-
-
-.about-extra {
-    padding: 50px 20px;
-    background-color: #ece7e7;
-    text-align: center;
-}
-
-.about-extra td{
-    padding: 50px 20px;
-    background-color: #ece7e7;
-    text-align: center;
-    border: 0px solid white
-}
-
-.information-extra th, td {
-    padding: 44px;
-    background-color: white;
-    text-align: center;
-    width: 500px;
-    word-wrap: break-word;
-    margin-left: 500px;
-}
-
-.carousel-container-2 {
-    position: relative;
-    overflow: hidden;
-    width: 800px; /* Tamaño del carrusel (ancho) */
-    margin: 0 auto; /* Centrado del carrusel */
-}
-
-.carousel-2 {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-item-2 {
-    min-width: 800px; /* Tamaño de las imágenes (ancho) */   /* IMPORTANTE, CAMBIAMOS MANUALMENTE EL TAMAÑO DEL CAROUSEL */
-    height: 500px; /* Tamaño de las imágenes (altura) */
-    object-fit: cover;
-}
-
-.photo-item-2 {
-    min-width: 600px; /* Tamaño de las imágenes (ancho) */   /* IMPORTANTE, CAMBIAMOS MANUALMENTE EL TAMAÑO DEL CAROUSEL */
-    height: 400px; /* Tamaño de las imágenes (altura) */
-    object-fit: cover;
-}
-
-.prev-btn-2, .next-btn-2 {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 30px;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 100; /* IMPORTANTE, ARREGLO EL BOTON DE RETROCESO DEL CAROUSEL */
-}
-
-
-.prev-btn-2 {
-    left: 10px;
-}
-
-.next-btn-2 {
-    right: 10px;
-}
-
-.prev-btn-2:hover, .next-btn-2:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-
-
-
-.carousel-container-3 {
-    position: relative;
-    overflow: hidden;
-    width: 800px; /* Tamaño del carrusel (ancho) */
-    margin: 0 auto; /* Centrado del carrusel */
-}
-
-.carousel-3 {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-item-3 {
-    min-width: 800px; /* Tamaño de las imágenes (ancho) */   /* IMPORTANTE, CAMBIAMOS MANUALMENTE EL TAMAÑO DEL CAROUSEL */
-    height: 500px; /* Tamaño de las imágenes (altura) */
-    object-fit: cover;
-}
-
-.photo-item-3 {
-    min-width: 50px; /* Tamaño de las imágenes (ancho) */   /* IMPORTANTE, CAMBIAMOS MANUALMENTE EL TAMAÑO DEL CAROUSEL */
-    height: 50px; /* Tamaño de las imágenes (altura) */
-    object-fit: cover;
-}
-
-.prev-btn-3, .next-btn-3 {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 30px;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 100; /* IMPORTANTE, ARREGLO EL BOTON DE RETROCESO DEL CAROUSEL */
-}
-
-
-.prev-btn-3 {
-    left: 10px;
-}
-
-.next-btn-3 {
-    right: 10px;
-}
-
-.prev-btn-3:hover, .next-btn-3:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    .dropdown-content img {
+        margin-bottom: 8px;
+    }
 }
