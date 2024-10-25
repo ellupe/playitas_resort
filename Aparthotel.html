@@ -8,28 +8,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <style>
-        /* Asegura que el contenido esté alineado correctamente */
+        /* Estilos para asegurar que los elementos estén alineados en una sola columna */
         .content-wrapper {
             width: 100%;
-            max-width: 1200px; /* Ajuste para pantallas grandes */
-            margin: 0 auto; /* Centra el contenido */
-            padding: 0 15px; /* Añade relleno para que no se pegue a los bordes */
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
             box-sizing: border-box;
         }
 
-        /* Para dispositivos móviles, asegura que el contenido esté correctamente alineado */
+        .section-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Espacio entre cada elemento */
+        }
+
+        .section-content img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Ajustes específicos para móviles */
         @media (max-width: 768px) {
             .content-wrapper {
-                padding: 0 10px; /* Ajusta el relleno para móviles */
-            }
-
-            table {
-                width: 100%; /* Asegura que la tabla ocupe todo el ancho disponible */
-                margin: 0; /* Elimina cualquier margen que pueda causar desplazamiento */
-            }
-
-            th, td {
-                text-align: left; /* Asegura que el texto esté alineado a la izquierda en móviles */
                 padding: 10px;
             }
         }
@@ -58,46 +61,39 @@
         </div>
     </header>
 
-    <!-- Envolvemos todo el contenido en un contenedor para alinear correctamente -->
     <div class="content-wrapper">
-        <section id="about" class="about-extra">
-            <h2 style="text-align: center;">Información</h2><br>
-            <table>
-                <tr>
-                    <td>
-                        <p><strong>Estudios</strong></p>
-                        <p>Los <strong>estudios</strong> son diáfanos, diseñados en dos niveles y tienen capacidad para <strong>cuatro huéspedes</strong>. 
-                        Cuentan con una pequeña cocina, baño y balcón con vistas al mar.</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="img/Aparthotel_foto1.jpg" alt="Vista del estudio">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p><strong>Apartamentos</strong></p>
-                        <p>Los <strong>apartamentos</strong> incluyen un dormitorio y un salón independiente, ideales para familias. 
-                        Ofrecen espacio extra y todas las comodidades para una estancia confortable.</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="img/Aparthotel_foto2.jpg" alt="Vista del apartamento">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="img/Aparthotel_foto3.jpg" alt="Vista del estudio">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="img/Aparthotel_foto4.jpg" alt="Vista del apartamento">
-                    </td>
-                </tr>
-            </table>
+        <section id="about" class="section-content">
+            <h2 style="text-align: center;">Información</h2>
+
+            <!-- Sección de Estudios -->
+            <div>
+                <p><strong>Estudios</strong></p>
+                <p>Los <strong>estudios</strong> son diáfanos, diseñados en dos niveles y tienen capacidad para <strong>cuatro huéspedes</strong>. 
+                Cuentan con una pequeña cocina, baño y balcón con vistas al mar.</p>
+                <img src="img/Aparthotel_foto1.jpg" alt="Vista del estudio">
+            </div>
+
+            <!-- Sección de Apartamentos -->
+            <div>
+                <p><strong>Apartamentos</strong></p>
+                <p>Los <strong>apartamentos</strong> incluyen un dormitorio y un salón independiente, ideales para familias. 
+                Ofrecen espacio extra y todas las comodidades para una estancia confortable.</p>
+                <img src="img/Aparthotel_foto2.jpg" alt="Vista del apartamento">
+            </div>
+
+            <!-- Más imágenes -->
+            <div>
+                <img src="img/Aparthotel_foto3.jpg" alt="Vista del estudio">
+            </div>
+            <div>
+                <img src="img/Aparthotel_foto4.jpg" alt="Vista del apartamento">
+            </div>
+            <div>
+                <img src="img/Aparthotel_foto5.jpg" alt="Vista del estudio">
+            </div>
+            <div>
+                <img src="img/Aparthotel_foto6.jpg" alt="Vista del apartamento">
+            </div>
         </section>
     </div>
 
