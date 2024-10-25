@@ -301,8 +301,8 @@ footer {
 
 /* Estilos para tablas en pantallas pequeñas */
 table {
-    width: 100%; /* Asegura que la tabla use el 100% del ancho del contenedor */
-    border-collapse: collapse; /* Asegura que las celdas compartan el mismo borde */
+    width: 100%;
+    border-collapse: collapse; /* Hace que las celdas compartan el mismo borde */
 }
 
 th, td {
@@ -320,13 +320,7 @@ th {
 td {
     background-color: #ffffff; /* Color de fondo para las celdas */
     text-align: left; /* Centra horizontalmente el texto */
-}
-
-/* Media queries para pantallas pequeñas */
-@media (max-width: 600px) {
-    table, thead, tbody, th, td, tr {
-        display: block; /* Cambia la tabla a un formato de bloque */
-   
+}   
 
 
 .map-container {
