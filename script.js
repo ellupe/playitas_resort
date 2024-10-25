@@ -169,3 +169,21 @@ function showPrevImage3() {
 // Asignar eventos a los botones
 nextBtn3.addEventListener('click', showNextImage3);
 prevBtn3.addEventListener('click', showPrevImage3);
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const dropdownBtn = document.querySelector('.dropdown-btn');
+    const dropdown = document.querySelector('.dropdown');
+
+    dropdownBtn.addEventListener("click", function() {
+        dropdown.classList.toggle("active"); // Activa o desactiva el dropdown
+    });
+
+    // Ocultar el dropdown si se hace clic fuera de él
+    window.addEventListener("click", function(event) {
+        if (!dropdown.contains(event.target)) {
+            dropdown.classList.remove("active");
+        }
+    });
+});
+
