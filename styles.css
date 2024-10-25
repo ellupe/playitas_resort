@@ -502,6 +502,13 @@ iframe {
 /* Media query para pantallas de dispositivos móviles */
 @media (max-width: 768px) {
     /* Ajustes generales */
+body, table, section {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+    
     body {
         font-size: 16px;
         line-height: 1.5;
