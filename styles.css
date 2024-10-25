@@ -214,34 +214,38 @@ footer {
 }
 
 /* Estilo del popup de cookies */
+/* Estilo del popup de cookies */
 .cookie-popup {
-    position: fixed;
+    position: fixed; /* Fijo para que permanezca visible al deslizar */
     bottom: 0;
     left: 0;
-    right: 0;
-    background-color: #333;
+    width: 100%; /* Ancho completo */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
     color: #fff;
-    padding: 15px 20px;
-    text-align: center;
-    font-size: 14px;
-    z-index: 1000;
-    display: none; /* Oculto por defecto */
+    padding: 20px;
+    text-align: center; /* Centrar el contenido */
+    font-size: 16px; /* Aumentar un poco el tamaño de fuente */
+    z-index: 1000; /* Mantenerlo por encima de otros elementos */
+    display: block; /* Mostrar el popup */
 }
 
+/* Estilo del enlace en el popup */
 .cookie-popup a {
     color: #f1c40f;
     text-decoration: underline;
 }
 
+/* Estilo del botón de aceptar cookies */
 .cookie-popup button {
     background-color: #f1c40f;
     border: none;
     color: #333;
-    padding: 8px 15px;
-    margin-left: 15px;
+    padding: 10px 20px;
+    margin-top: 15px; /* Margen superior para separar del texto */
     cursor: pointer;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 16px;
+    display: inline-block; /* Centrado dentro de la sección */
 }
 
 .cookie-popup button:hover {
@@ -466,4 +470,121 @@ iframe {
 
 .prev-btn-3:hover, .next-btn-3:hover {
     background-color: rgba(0, 0, 0, 0.8);
+}
+/* Media query para pantallas de dispositivos móviles */
+@media (max-width: 768px) {
+    /* Ajustes generales */
+    body {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    /* Ajustar encabezado hero */
+    .hero, .hero2 {
+        height: auto;
+        padding: 20px;
+        background-size: cover;
+    }
+
+    /* Centrar los elementos de la navegación en dispositivos móviles */
+    .nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links li {
+        margin: 5px 0;
+    }
+
+        /* Ajustar el contenedor del carrusel */
+    .carousel-container, .carousel-container-2, .carousel-container-3 {
+        width: 100%;
+    }
+
+    /* Hacer que las imágenes se ajusten al ancho de la pantalla */
+    .carousel-item, .carousel-item-2, .carousel-item-3 {
+        min-width: 100%;
+        height: auto; /* Ajusta la altura automáticamente */
+    }
+
+    /* Redimensionar los botones prev y next para pantallas pequeñas */
+    .prev-btn, .next-btn, .prev-btn-2, .next-btn-2, .prev-btn-3, .next-btn-3 {
+        font-size: 20px;
+        padding: 8px;
+    }
+
+    /* Centrar los botones en pantallas móviles */
+    .prev-btn, .next-btn, .prev-btn-2, .next-btn-2, .prev-btn-3, .next-btn-3 {
+        top: 40%; /* Ajuste de posición */
+    }
+
+    /* Ajustar las secciones de información */
+    .about, .about-extra, .information-extra {
+        padding: 20px 10px;
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    /* Ajustar las imágenes de las habitaciones */
+    table img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Contacto */
+    .contact form {
+        width: 100%;
+    }
+
+    /* Ubicación */
+    .map-container iframe {
+        width: 100%;
+        height: 300px;
+    }
+
+    /* Dropdown redes sociales */
+    .dropdown-content img.photo-item {
+        width: 30px; /* Ajusta el tamaño de las imágenes */
+        height: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+        .about-extra, .information-extra {
+        padding: 20px 10px;
+    }
+
+    /* Alineación y ajuste de tablas */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        display: block; /* Cada elemento se apila verticalmente */
+        width: 100%;
+        padding: 10px;
+        text-align: center; /* Centrar texto y contenido */
+    }
+
+    /* Ajuste de las imágenes */
+    img.photo-item-2 {
+        width: 100%;
+        height: auto; /* Mantener la proporción */
+        max-width: 300px; /* Limita el tamaño máximo de las imágenes */
+        margin: 0 auto; /* Centra las imágenes */
+    }
 }
