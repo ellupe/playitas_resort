@@ -3,59 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las Playitas Resort - Fuerteventura</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Aparthotel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <header class="hero2">
-        <div class="nav">
-            <div class="logo">Aparthotel</div>
+        <nav class="nav">
+            <h1 class="logo">Las Playitas Resort</h1>
             <ul class="nav-links">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">Galería</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="index.html" target="_blank">Inicio</a></li>
+                <li><a href="#about">Información</a></li>
+                <li class="dropdown">
+                    <a href="#">Habitaciones</a>
+                    <div class="dropdown-content">
+                        <a href="Aparthotel.html" target="_blank"><b>Aparthotel</b></a>
+                        <a href="Villa.html" target="_blank"><b>Villa</b></a>
+                        <a href="Hotel.html" target="_blank"><b>Hotel</b></a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Redes Sociales</a>
+                    <div class="dropdown-content">
+                        <a href="https://www.facebook.com/PlayitasResort" target="_blank">
+                            <img src="img/b763699fd1fa3bfb374442593ae642e1.png" class="photo-item">
+                        </a>
+                        <a href="https://twitter.com/PlayitasResort" target="_blank">
+                            <img src="img/new-twitter-x-logo-twitter-icon-x-social-media-icon-free-png.webp" class="photo-item">
+                        </a>
+                        <a href="https://www.instagram.com/playitasresort/?hl=es" target="_blank">
+                            <img src="img/black-and-white-instagram-logo-on-square-with-transparent-background-free-png.webp" class="photo-item">
+                        </a>
+                    </div>
+                </li>
             </ul>
-        </div>
+        </nav>
         <div class="hero-content">
-            <h2>Bienvenido a Nuestro Aparthotel</h2>
-            <p>Disfruta de la comodidad y el lujo en un solo lugar.</p>
-            <a href="#" class="btn">Reservar Ahora</a>
+            <h2>Aparthotel</h2>
+            <a href="#about" class="btn">Descubre más</a>
         </div>
     </header>
 
-    <section class="about">
-        <h2>Sobre Nosotros</h2>
-        <p>Ofrecemos un servicio excepcional y alojamiento de calidad.</p>
+    <section id="about" class="about-extra">
+        <h2>Información</h2>
+        <table>
+            <tr>
+                <td colspan="2">
+                    <p> Los <strong>estudios</strong> son diáfanos, diseñados en dos niveles y tienen capacidad para <strong>cuatro huéspedes</strong>.</p>
+                    <p>Los <strong>apartamentos</strong> tienen las mismas instalaciones que los estudios e incluyen un dormitorio y un salón independiente. La capacidad es para <strong>cinco personas</strong>.</p>
+                    <strong>Sus opciones de reserva para el Aparthotel: </strong>
+                    <ul>
+                        <li>Solo Alojamiento</li>
+                        <li>Alojamiento y desayuno</li>
+                        <li>Media pensión</li>
+                        <li>Pensión completa</li>
+                    </ul>
+                    <p>*El restaurante del Aparthotel ofrece a los huéspedes un buffet variado para el desayuno y la cena. *El almuerzo se sirve en el restaurante del Hotel.</p>
+                </td>
+            </tr>
+        </table>
     </section>
 
-    <section class="gallery">
-        <h2>Nuestra Galería</h2>
-        <div class="carousel-container">
-            <div class="carousel">
-                <div class="carousel-item"><img src="img/aparthotel1.jpg" alt="Imagen 1"></div>
-                <div class="carousel-item"><img src="img/aparthotel2.jpg" alt="Imagen 2"></div>
-                <div class="carousel-item"><img src="img/aparthotel3.jpg" alt="Imagen 3"></div>
-            </div>
-            <button class="prev-btn">❮</button>
-            <button class="next-btn">❯</button>
-        </div>
+    <section class="information-extra">
+        <table>
+            <tr>
+                <th colspan="2"><h1><br><strong>Estudios</strong></h1></th>
+            </tr>
+            <tr>
+                <td>
+                    <p>El aparthotel de Playitas Resort cuenta con <strong>114 estudios</strong> equipados con todo lo necesario para que tu estancia sea más placentera.</p>
+                    <strong>Instalaciones en la habitación</strong>
+                    <ul>
+                        <li>Aire acondicionado</li>
+                        <li>Wifi gratis</li>
+                        <li>Televisión vía satélite</li>
+                        <li>Teléfono</li>
+                        <li>Caja fuerte</li>
+                        <li>Cocina bien equipada con microondas</li>
+                        <li>Hervidor de agua</li>
+                        <li>Baño con ducha y secador de pelo</li>
+                        <li>Terraza o Balcón</li>
+                    </ul>
+                    <p>Desde el balcón o terraza de su estudio, podrá disfrutar de una hermosa vista <strong>al jardín o al mar</strong>. Hay 71 estudios con vistas al jardín y 43 con vistas al mar. Todos los estudios grandes de 36m2 son diáfanos, diseñados en dos niveles y tienen capacidad para <strong>cuatro huéspedes</strong>.</p>
+                </td>
+                <td>
+                    <img src="img/Aparthotel_foto1.jpg" alt="Vista del resort" class="photo-item-2">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="img/Aparthotel_foto2.jpg" alt="Vista del resort" class="photo-item-2">
+                </td>
+                <td>
+                    <img src="img/Aparthotel_foto3.jpg" alt="Vista del resort" class="photo-item-2">
+                </td>
+            </tr>
+            <tr>
+                <th colspan="2"><h1><br><strong>Apartamentos</strong></h1></th>
+            </tr>
+            <tr>
+                <td>
+                    <p>Playitas Resort cuenta con <strong>96 apartamentos</strong> a su disposición. Todos ellos están equipados con todas las comodidades para hacer su estancia más placentera.</p>
+                    <strong>Instalaciones en la habitación</strong>
+                    <ul>
+                        <li>Aire acondicionado</li>
+                        <li>Wifi gratis</li>
+                        <li>Televisión vía satélite</li>
+                        <li>Teléfono</li>
+                        <li>Caja fuerte</li>
+                        <li>Cocina bien equipada con microondas</li>
+                        <li>Hervidor de agua</li>
+                        <li>Baño con ducha y bañera / Secador de pelo</li>
+                        <li>Terraza o Balcón</li>
+                    </ul>
+                    <p>Todos los apartamentos ofrecen una gran vista al jardín o al mar. Los apartamentos se pueden reservar para dos y hasta cinco personas y miden 55m2. Contamos con 44 apartamentos con vistas al jardín y 52 con vistas al mar.</p>
+                </td>
+                <td>
+                    <img src="img/aparthotel_foto4.jpg" alt="Vista del resort" class="photo-item-2">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="img/Aparthotel_foto5.jpg" alt="Vista del resort" class="photo-item-2">
+                </td>
+                <td>
+                    <img src="img/Aparthotel_foto6.jpg" alt="Vista del resort" class="photo-item-2">
+                </td>
+            </tr>
+        </table>
     </section>
 
-    <section class="contact">
-        <h2>Contacto</h2>
-        <form>
-            <input type="text" placeholder="Nombre" required>
-            <input type="email" placeholder="Correo" required>
-            <textarea placeholder="Mensaje" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Aparthotel. Todos los derechos reservados.</p>
-    </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
