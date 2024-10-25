@@ -580,24 +580,12 @@ iframe {
 
 /* Tabla responsiva para pantallas pequeñas */
 @media (max-width: 768px) {
-    .about-extra table {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-
-    .about-extra th, .about-extra td {
-        display: inline-block;
-        width: 100%;
-        box-sizing: border-box;
-        text-align: center;
-    }
-
-    .about-extra img {
-        width: 100%;
-        max-width: 300px;
-        height: auto;
-    }
+    /* Hacer que la tabla ocupe el 100% en pantallas pequeñas */
+.about-extra table {
+    width: 100%; /* Asegura que la tabla ocupe el ancho completo */
+    max-width: 600px; /* Ancho máximo para mantener el diseño en pantallas grandes */
+    margin: 0 auto; /* Centra la tabla */
+    border-collapse: collapse; /* Elimina espacios entre celdas */
+}
 }
 
