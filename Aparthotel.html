@@ -7,6 +7,52 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        /* Asegura que el contenedor principal ocupe el 100% del ancho de la pantalla */
+        body, .about-extra, .information-extra {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Asegura que las tablas no se desborden en pantallas pequeñas */
+        table {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            table-layout: fixed; /* Asegura que las tablas se adapten a los contenedores */
+        }
+
+        th, td {
+            word-wrap: break-word;
+        }
+
+        /* Asegura que las imágenes se ajusten al ancho de la pantalla en móviles */
+        img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Ajuste específico para dispositivos móviles */
+        @media (max-width: 768px) {
+            .about-extra, .information-extra {
+                padding: 10px; /* Añade relleno para evitar que el contenido quede pegado */
+            }
+
+            table, th, td {
+                display: block;
+                width: 100%; /* Asegura que el contenido ocupe el 100% del espacio en móviles */
+            }
+
+            img {
+                width: 100%; /* Asegura que las imágenes sean completamente responsivas */
+                height: auto;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="hero2">
@@ -37,10 +83,8 @@
             <tr>
                 <th><strong>Estudios</strong></th>
                 <th><strong>Apartamentos</strong></th>
-
             </tr>
             <tr>
-                
                 <td>
                     <p>Los <strong>estudios</strong> son diáfanos, diseñados en dos niveles y tienen capacidad para <strong>cuatro huéspedes</strong>. 
                     Cuentan con una pequeña cocina, baño y balcón con vistas al mar.</p>
@@ -52,26 +96,26 @@
             </tr>
             <tr>
                 <td>
-                    <img src="img/Aparthotel_foto1.jpg" alt="Vista del estudio" style="width: 100%; max-width: 300px; height: auto;">
+                    <img src="img/Aparthotel_foto1.jpg" alt="Vista del estudio">
                 </td>
                 <td>
-                    <img src="img/Aparthotel_foto2.jpg" alt="Vista del apartamento" style="width: 100%; max-width: 300px; height: auto;">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <img src="img/Aparthotel_foto3.jpg" alt="Vista del estudio" style="width: 100%; max-width: 300px; height: auto;">
-                </td>
-                <td>
-                    <img src="img/Aparthotel_foto4.jpg" alt="Vista del apartamento" style="width: 100%; max-width: 300px; height: auto;">
+                    <img src="img/Aparthotel_foto2.jpg" alt="Vista del apartamento">
                 </td>
             </tr>
             <tr>
                 <td>
-                    <img src="img/Aparthotel_foto5.jpg" alt="Vista del estudio" style="width: 100%; max-width: 300px; height: auto;">
+                    <img src="img/Aparthotel_foto3.jpg" alt="Vista del estudio">
                 </td>
                 <td>
-                    <img src="img/Aparthotel_foto6.jpg" alt="Vista del apartamento" style="width: 100%; max-width: 300px; height: auto;">
+                    <img src="img/Aparthotel_foto4.jpg" alt="Vista del apartamento">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="img/Aparthotel_foto5.jpg" alt="Vista del estudio">
+                </td>
+                <td>
+                    <img src="img/Aparthotel_foto6.jpg" alt="Vista del apartamento">
                 </td>
             </tr>
         </table>
