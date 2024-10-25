@@ -13,9 +13,9 @@ body {
 }
 
 /* Encabezado */
-.hero {
+.hero, .hero2 {
     height: 100vh;
-    background: url('img/resort-bg.jpg') no-repeat center center/cover;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -23,16 +23,7 @@ body {
     color: white;
 }
 
-.hero2 {
-    height: 100vh;
-    background: url('img/aparthotel2.jpg') no-repeat center center/cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    color: white;
-}
-
+/* Navegación */
 .nav {
     display: flex;
     flex-direction: column;
@@ -56,7 +47,6 @@ body {
     display: flex;
     list-style: none;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 .nav-links li a {
@@ -72,8 +62,7 @@ body {
 }
 
 .hero-content h2 {
-    font-size: 6vw; /* Escala con el ancho de la pantalla */
-    margin-top: 0;
+    font-size: 48px;
 }
 
 .hero-content p {
@@ -96,48 +85,49 @@ body {
 }
 
 /* Sobre Nosotros */
-.about, .contact, .ubicacion, .about-extra {
+.about, .about-extra {
     padding: 50px 20px;
     background-color: #f9f9f9;
     text-align: center;
 }
 
-.about h2, .ubicacion h2, .about-extra h2 {
+.about h2, .ubicacion h2 {
     font-size: 36px;
     margin-bottom: 20px;
 }
 
-.about p {
+.about p, .ubicacion p {
     font-size: 18px;
     max-width: 800px;
     margin: 0 auto;
 }
 
 /* Galería */
-.gallery {
+.gallery, .carousel-container {
     padding: 50px 20px;
     text-align: center;
 }
 
-.carousel-container, .carousel-container-2, .carousel-container-3 {
+.carousel-container {
     position: relative;
     overflow: hidden;
-    width: 800px;
+    width: 100%; /* Tamaño ajustable para móviles */
     margin: 0 auto;
 }
 
-.carousel, .carousel-2, .carousel-3 {
+.carousel {
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
 
-.carousel-item, .carousel-item-2, .carousel-item-3 {
-    min-width: 800px;
+.carousel-item {
+    min-width: 100%;
     height: 500px;
     object-fit: cover;
 }
 
-.prev-btn, .next-btn, .prev-btn-2, .next-btn-2, .prev-btn-3, .next-btn-3 {
+/* Botones del carrusel */
+.prev-btn, .next-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -150,19 +140,25 @@ body {
     z-index: 100;
 }
 
-.prev-btn, .prev-btn-2, .prev-btn-3 {
+.prev-btn {
     left: 10px;
 }
 
-.next-btn, .next-btn-2, .next-btn-3 {
+.next-btn {
     right: 10px;
 }
 
-.prev-btn:hover, .next-btn:hover, .prev-btn-2:hover, .next-btn-2:hover, .prev-btn-3:hover, .next-btn-3:hover {
+.prev-btn:hover, .next-btn:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Contacto */
+.contact, .ubicacion {
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
 .contact form {
     max-width: 600px;
     margin: 0 auto;
@@ -197,7 +193,7 @@ footer {
     text-align: center;
 }
 
-/* Popup de Cookies */
+/* Popup de cookies */
 .cookie-popup {
     position: fixed;
     bottom: 0;
@@ -232,7 +228,7 @@ footer {
     background-color: #e1b30f;
 }
 
-/* Menú Desplegable */
+/* Menú desplegable */
 .dropdown {
     position: relative;
 }
@@ -263,13 +259,18 @@ footer {
     display: block;
 }
 
+/* Estilos adicionales */
+.separacion {
+    margin-right: 50px;
+}
+
 .centered-line {
     width: 30%;
     margin: 0 auto;
     border: 1px solid #333;
 }
 
-/* Estilos de Tabla */
+/* Tabla */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -279,52 +280,17 @@ th, td {
     border: 1px solid white;
     padding: 8px;
     vertical-align: middle;
-}
-
-th {
-    background-color: #ffffff;
-    color: black;
     text-align: center;
 }
 
-td {
-    background-color: #ffffff;
-    text-align: left;
-}
-
-.map-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-iframe {
-    width: 600px;
+.map-container iframe {
+    width: 100%;
     height: 450px;
     border: 0;
 }
 
-/* Media Queries */
+/* Media Queries para móviles y tablets */
 @media (max-width: 768px) {
-    .hero, .hero2 {
-        height: 70vh;
-        background-size: contain;
-    }
-
-    .nav {
-        flex-direction: row;
-    }
-    
-    .nav-links {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .logo {
-        font-size: 2rem;
-        margin-bottom: 10px;
-    }
-
     .hero-content h2 {
         font-size: 36px;
     }
@@ -333,63 +299,29 @@ iframe {
         font-size: 16px;
     }
 
-    .btn {
-        padding: 8px 16px;
-        font-size: 16px;
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
     }
 
-    .carousel-container, .carousel-container-2, .carousel-container-3 {
-        width: 100%;
-    }
-
-    .carousel-item, .carousel-item-2, .carousel-item-3 {
-        min-width: 100%;
-        height: auto;
-    }
-
-    .contact form {
-        padding: 20px;
-    }
-
-    .contact input, .contact textarea {
-        padding: 10px;
-    }
-
-    iframe {
-        width: 100%;
+    .carousel-item {
         height: 300px;
     }
 
-    .cookie-popup {
-        font-size: 12px;
-        padding: 10px;
+    .about h2, .ubicacion h2 {
+        font-size: 28px;
     }
-    
-    .cookie-popup button {
-        padding: 5px 10px;
-        font-size: 12px;
+
+    .about p, .ubicacion p {
+        font-size: 16px;
+    }
+
+    .contact form {
+        max-width: 100%;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 8px 16px;
     }
 }
-
-@media (min-width: 768px) and (max-width: 1024px) {
-    .hero, .hero2 {
-        height: 85vh;
-    }
-
-    .nav {
-        padding: 15px;
-    }
-
-    .logo {
-        font-size: 2.2rem;
-    }
-
-    .carousel-container, .carousel-container-2, .carousel-container-3 {
-        width: 90%;
-    }
-
-    .carousel-item, .carousel-item-2, .carousel-item-3 {
-        min-width: 90%;
-    }
-
-    .contact input, .contact textarea {
