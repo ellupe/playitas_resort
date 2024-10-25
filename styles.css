@@ -605,6 +605,33 @@ iframe {
     }
 }
 
+/* Eliminar márgenes innecesarios en móviles */
+@media (max-width: 768px) {
+    section, table, img {
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Ajuste específico de las tablas y las imágenes */
+    table img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Alinear correctamente el contenido en móviles */
+@media (max-width: 768px) {
+    .about-extra, .information-extra {
+        text-align: left;
+        margin: 0;
+        padding: 0 10px; /* Añadir un poco de relleno lateral */
+    }
+
+    .nav-links, .dropdown-content {
+        width: 100%;
+    }
+}
+
 /* Tabla responsiva para pantallas pequeñas */
 
 @media (max-width: 768px) {
