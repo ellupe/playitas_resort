@@ -214,36 +214,38 @@ footer {
 }
 
 /* Estilo del popup de cookies */
+/* Estilo del popup de cookies */
 .cookie-popup {
-    position: fixed; /* Mantener la posición fija */
-    width: 100%; /* Asegurar que ocupa el 100% del ancho */
-    bottom: 0; /* Fijar en la parte inferior */
-    left: 0; /* Fijar en la parte izquierda */
-    right: 0; /* Asegurar que ocupa el 100% hasta la derecha */
-    background-color: #333; /* Fondo oscuro */
-    color: #fff; /* Texto blanco */
-    padding: 15px 20px; /* Espaciado interno */
-    text-align: center; /* Centrar el texto */
-    font-size: 14px; /* Tamaño de fuente */
-    z-index: 1000; /* Prioridad de apilamiento */
-    display: none; /* Oculto por defecto */
+    position: fixed; /* Fijo para que permanezca visible al deslizar */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Ancho completo */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+    color: #fff;
+    padding: 20px;
+    text-align: center; /* Centrar el contenido */
+    font-size: 16px; /* Aumentar un poco el tamaño de fuente */
+    z-index: 1000; /* Mantenerlo por encima de otros elementos */
+    display: block; /* Mostrar el popup */
 }
 
-
+/* Estilo del enlace en el popup */
 .cookie-popup a {
     color: #f1c40f;
     text-decoration: underline;
 }
 
+/* Estilo del botón de aceptar cookies */
 .cookie-popup button {
     background-color: #f1c40f;
     border: none;
     color: #333;
-    padding: 8px 15px;
-    margin-left: 15px;
+    padding: 10px 20px;
+    margin-top: 15px; /* Margen superior para separar del texto */
     cursor: pointer;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 16px;
+    display: inline-block; /* Centrado dentro de la sección */
 }
 
 .cookie-popup button:hover {
