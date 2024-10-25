@@ -173,17 +173,19 @@ prevBtn3.addEventListener('click', showPrevImage3);
 
 document.addEventListener("DOMContentLoaded", function() {
     const dropdownBtn = document.querySelector('.dropdown-btn');
-    const dropdown = document.querySelector('.dropdown');
+    const dropdownContent = document.querySelector('.dropdown-content');
 
-    dropdownBtn.addEventListener("click", function() {
-        dropdown.classList.toggle("active"); // Activa o desactiva el dropdown
+    dropdownBtn.addEventListener("click", function(event) {
+        event.stopPropagation(); // Evita el cierre inmediato
+        dropdownContent.classList.toggle("active");
     });
 
-    // Ocultar el dropdown si se hace clic fuera de él
-    window.addEventListener("click", function(event) {
-        if (!dropdown.contains(event.target)) {
-            dropdown.classList.remove("active");
+    // Ocultar el dropdown al hacer clic fuera
+    window.addEventListener("click", function() {
+        if (dropdownContent.classList.contains("active")) {
+            dropdownContent.classList.remove("active");
         }
     });
 });
+
 
