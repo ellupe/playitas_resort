@@ -21,12 +21,6 @@ section.about-extra, section.information-extra {
     margin: 0;
 }
 
-table {
-    width: 100%; /* Asegura que las tablas ocupen el 100% del contenedor */
-    max-width: 100%; /* Previene que las tablas se desborden */
-    margin: 0 auto;
-}
-
 img {
     width: 100%; /* Asegura que las imágenes sean responsivas */
     height: auto;
