@@ -215,17 +215,11 @@ footer {
 
 /* Estilo del popup de cookies */
 .cookie-popup {
-    position: fixed;
+    width: 100%;
     bottom: 0;
     left: 0;
-    right: 0;
-    background-color: #333;
-    color: #fff;
-    padding: 15px 20px;
-    text-align: center;
+    padding: 10px;
     font-size: 14px;
-    z-index: 1000;
-    display: none; /* Oculto por defecto */
 }
 
 .cookie-popup a {
@@ -547,5 +541,17 @@ iframe {
     .dropdown-content img.photo-item {
         width: 30px; /* Ajusta el tamaño de las imágenes */
         height: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    table {
+        display: block;
+    }
+
+    table th, table td {
+        display: block;
+        text-align: center;
+        margin-bottom: 20px;
     }
 }
