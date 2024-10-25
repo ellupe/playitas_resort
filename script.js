@@ -30,6 +30,7 @@ prevBtn.addEventListener('click', showPrevImage);
 // Recalcular el tamaño al redimensionar la ventana
 window.addEventListener('resize', updateCarousel);
 
+
 document.addEventListener("DOMContentLoaded", function() {
     updateCarousel();
 });
