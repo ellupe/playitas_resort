@@ -6,9 +6,12 @@ const nextBtn = document.querySelector('.next-btn');
 
 // Mostrar la imagen en base al índice actual
 function updateCarousel() {
-    const offset = -currentIndex * 800; // Ajusta el desplazamiento según el tamaño de las imágenes (400px)
+    const itemWidth = document.querySelector('.carousel').offsetWidth; // Obtener el ancho del contenedor del carrusel
+    const offset = -currentIndex * itemWidth; // Ajustar el desplazamiento según el ancho dinámico
     document.querySelector('.carousel').style.transform = `translateX(${offset}px)`;
 }
+
+window.addEventListener('resize', updateCarousel);
 
 // Avanzar a la siguiente imagen
 function showNextImage() {
