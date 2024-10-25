@@ -3,76 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Las Playitas Resort - Aparthotel</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <title>Aparthotel</title>
 </head>
 <body>
+
     <header class="hero2">
-        <nav class="nav">
-            <h1 class="logo">Las Playitas Resort</h1>
+        <div class="nav">
+            <div class="logo">Aparthotel</div>
             <ul class="nav-links">
-                <li><a href="index.html" target="_blank">Inicio</a></li>
-                <li><a href="#about">Información</a></li>
-                <li class="dropdown">
-                    <a href="#">Habitaciones</a>
-                    <div class="dropdown-content">
-                        <a href="Aparthotel.html" target="_blank"><b>Aparthotel</b></a>
-                        <a href="Villa.html" target="_blank"> <b>Villa</b></a>
-                        <a href="Hotel.html" target="_blank"> <b>Hotel</b> </a>
-                    </div>
-                </li>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Galería</a></li>
+                <li><a href="#">Contacto</a></li>
             </ul>
-        </nav>
+        </div>
         <div class="hero-content">
-            <h2>Aparthotel</h2>
-            <a href="#about" class="btn">Descubre más</a>
+            <h2>Bienvenido a Nuestro Aparthotel</h2>
+            <p>Disfruta de la comodidad y el lujo en un solo lugar.</p>
+            <a href="#" class="btn">Reservar Ahora</a>
         </div>
     </header>
 
-    <section id="about" class="about-extra">
-        <h2>Información</h2>
-        <table>
-            <tr>
-                <td colspan="2">
-                    Los <strong>estudios</strong> son diáfanos, diseñados en dos niveles y tienen capacidad para <strong>cuatro huéspedes</strong>.
-                    Los <strong>apartamentos</strong> tienen las mismas instalaciones que los estudios e incluyen un dormitorio y un salón independiente. <br>
-                    <strong>Sus opciones de reserva para el Aparthotel: </strong><br>
-                    &bull;Solo Alojamiento <br>
-                    &bull;Alojamiento y desayuno <br>
-                    &bull;Media pensión <br>
-                    &bull;Pensión completa <br>
-                    *El restaurante del Aparthotel ofrece a los huéspedes un buffet variado para el desayuno y la cena.
-                </td>
-            </tr>
-        </table>
+    <section class="about">
+        <h2>Sobre Nosotros</h2>
+        <p>Ofrecemos un servicio excepcional y alojamiento de calidad.</p>
     </section>
 
-    <section class="information-extra">
-        <table>
-            <tr>
-                <th colspan="2"><h1><strong>Estudios</strong></h1></th>
-            </tr>
-            <tr>
-                <td>
-                    El aparthotel de Playitas Resort cuenta con <strong>114 estudios</strong> equipados con todo lo necesario para que tu estancia sea más placentera.
-                </td>
-                <td>
-                    <img src="img/Aparthotel_foto1.jpg" alt="Vista del resort" class="photo-item-2">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <img src="img/Aparthotel_foto2.jpg" alt="Vista del resort" class="photo-item-2">
-                </td>
-                <td>
-                    <img src="img/Aparthotel_foto3.jpg" alt="Vista del resort" class="photo-item-2">
-                </td>
-            </tr>
-        </table>
+    <section class="gallery">
+        <h2>Nuestra Galería</h2>
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item"><img src="img/aparthotel1.jpg" alt="Imagen 1"></div>
+                <div class="carousel-item"><img src="img/aparthotel2.jpg" alt="Imagen 2"></div>
+                <div class="carousel-item"><img src="img/aparthotel3.jpg" alt="Imagen 3"></div>
+            </div>
+            <button class="prev-btn">❮</button>
+            <button class="next-btn">❯</button>
+        </div>
     </section>
 
-    <script src="script.js"></script>
+    <section class="contact">
+        <h2>Contacto</h2>
+        <form>
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Correo" required>
+            <textarea placeholder="Mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Aparthotel. Todos los derechos reservados.</p>
+    </footer>
+
 </body>
 </html>
