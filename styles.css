@@ -301,13 +301,20 @@ footer {
 
 table {
     width: 100%;
-    border-collapse: collapse; /* Hace que las celdas compartan el mismo borde */
+    border-collapse: collapse; /* Elimina los espacios entre celdas */
+    margin-bottom: 20px;
 }
 
 th, td {
-    border: 1px solid white; /* Define el color del borde como blanco */
-    padding: 8px; /* Añade espacio dentro de las celdas */
-    vertical-align: middle; /* Centra verticalmente el contenido */
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle; /* Asegura la alineación vertical de las celdas */
+}
+
+table img {
+    width: 100%;
+    max-width: 300px; /* Limita el tamaño máximo de las imágenes */
+    height: auto; /* Mantiene la proporción */
 }
 
 th {
