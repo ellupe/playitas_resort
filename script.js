@@ -172,22 +172,38 @@ prevBtn3.addEventListener('click', showPrevImage3);
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    const dropdownBtn = document.querySelector('.dropdown-btn');
-    const dropdownContent = document.querySelector('.dropdown-content');
+    const dropdowns = document.querySelectorAll('.dropdown');
 
-    dropdownBtn.addEventListener("click", function(event) {
-        event.stopPropagation(); // Evita el cierre inmediato
-        dropdownContent.classList.toggle("active");
-        console.log("Dropdown activado"); // Mensaje de depuración
+    dropdowns.forEach(dropdown => {
+        const btn = dropdown.querySelector('.dropdown-btn');
+        const content = dropdown.querySelector('.dropdown-content');
+
+        // Evento para mostrar y ocultar el dropdown
+        btn.addEventListener("click", function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            // Cierra otros dropdowns antes de abrir el actual
+            dropdowns.forEach(d => d.classList.remove('active'));
+            
+            // Activar o desactivar el dropdown actual
+            dropdown.classList.toggle("active");
+        });
     });
 
-    // Ocultar el dropdown al hacer clic fuera
+    // Cerrar dropdown al hacer clic fuera
     window.addEventListener("click", function() {
-        if (dropdownContent.classList.contains("active")) {
-            dropdownContent.classList.remove("active");
-            console.log("Dropdown desactivado"); // Mensaje de depuración
-        }
+        dropdowns.forEach(d => d.classList.remove('active'));
     });
 });
+
+
+
+
+
+
+
+
+
 
 
