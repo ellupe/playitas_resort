@@ -215,12 +215,20 @@ footer {
 
 /* Estilo del popup de cookies */
 .cookie-popup {
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    padding: 10px;
-    font-size: 14px;
+    position: fixed; /* Mantener la posición fija */
+    width: 100%; /* Asegurar que ocupa el 100% del ancho */
+    bottom: 0; /* Fijar en la parte inferior */
+    left: 0; /* Fijar en la parte izquierda */
+    right: 0; /* Asegurar que ocupa el 100% hasta la derecha */
+    background-color: #333; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    padding: 15px 20px; /* Espaciado interno */
+    text-align: center; /* Centrar el texto */
+    font-size: 14px; /* Tamaño de fuente */
+    z-index: 1000; /* Prioridad de apilamiento */
+    display: none; /* Oculto por defecto */
 }
+
 
 .cookie-popup a {
     color: #f1c40f;
