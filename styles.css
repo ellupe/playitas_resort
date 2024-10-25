@@ -579,26 +579,15 @@ iframe {
 }
 
 /* Tabla responsiva para pantallas pequeñas */
+
 @media (max-width: 768px) {
-    /* Hacer que la tabla ocupe el 100% en pantallas pequeñas */
-.about-extra table {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-
-    .about-extra th, .about-extra td {
-        display: inline-block;
-        width: 100%;
-        box-sizing: border-box;
-        text-align: center;
-    }
-
     .about-extra img {
-        width: 100%;
+        width: 100%; /* Asegura que las imágenes se ajustan al contenedor */
         max-width: 300px;
         height: auto;
+        margin: 0 auto; /* Centra las imágenes */
     }
 }
+
+
 
