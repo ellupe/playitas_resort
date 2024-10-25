@@ -502,18 +502,26 @@ iframe {
         margin: 5px 0;
     }
 
-    /* Ajustar el tamaño de la galería */
+        /* Ajustar el contenedor del carrusel */
     .carousel-container, .carousel-container-2, .carousel-container-3 {
         width: 100%;
     }
 
+    /* Hacer que las imágenes se ajusten al ancho de la pantalla */
     .carousel-item, .carousel-item-2, .carousel-item-3 {
         min-width: 100%;
-        height: auto; /* Ajusta la altura de las imágenes */
+        height: auto; /* Ajusta la altura automáticamente */
     }
 
+    /* Redimensionar los botones prev y next para pantallas pequeñas */
     .prev-btn, .next-btn, .prev-btn-2, .next-btn-2, .prev-btn-3, .next-btn-3 {
         font-size: 20px;
+        padding: 8px;
+    }
+
+    /* Centrar los botones en pantallas móviles */
+    .prev-btn, .next-btn, .prev-btn-2, .next-btn-2, .prev-btn-3, .next-btn-3 {
+        top: 40%; /* Ajuste de posición */
     }
 
     /* Ajustar las secciones de información */
