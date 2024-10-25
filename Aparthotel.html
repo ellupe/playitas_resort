@@ -8,47 +8,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <style>
-        /* Asegura que el contenedor principal ocupe el 100% del ancho de la pantalla */
-        body, .about-extra, .information-extra {
-            width: 100%;
-            max-width: 100%;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Asegura que las tablas no se desborden en pantallas pequeñas */
-        table {
+        /* Asegura que todo el contenedor ocupe el 100% del ancho y no haya desbordamiento */
+        body, .about-extra, .information-extra, table {
             width: 100%;
             max-width: 100%;
             margin: 0 auto;
-            table-layout: fixed; /* Asegura que las tablas se adapten a los contenedores */
+            padding: 0;
+            box-sizing: border-box; /* Asegura que el padding y el margin no provoquen desbordamiento */
         }
 
+        /* Ajuste de las celdas de la tabla para evitar desbordamientos */
         th, td {
             word-wrap: break-word;
+            padding: 10px;
+            text-align: center;
+            vertical-align: top;
+            box-sizing: border-box; /* Controla el espacio dentro de las celdas */
         }
 
-        /* Asegura que las imágenes se ajusten al ancho de la pantalla en móviles */
+        /* Asegura que las imágenes sean responsivas */
         img {
             width: 100%;
-            max-width: 100%;
             height: auto;
+            display: block;
         }
-        
-        /* Ajuste específico para dispositivos móviles */
-        @media (max-width: 768px) {
-            .about-extra, .information-extra {
-                padding: 10px; /* Añade relleno para evitar que el contenido quede pegado */
-            }
 
+        /* Ajuste específico para pantallas pequeñas */
+        @media (max-width: 768px) {
             table, th, td {
                 display: block;
-                width: 100%; /* Asegura que el contenido ocupe el 100% del espacio en móviles */
+                width: 100%;
+            }
+
+            .about-extra, .information-extra {
+                padding: 10px;
             }
 
             img {
-                width: 100%; /* Asegura que las imágenes sean completamente responsivas */
+                max-width: 100%;
                 height: auto;
             }
         }
@@ -79,7 +76,7 @@
 
     <section id="about" class="about-extra">
         <h2 style="text-align: center;">Información</h2><br>
-        <table style="text-align: center;">
+        <table>
             <tr>
                 <th><strong>Estudios</strong></th>
                 <th><strong>Apartamentos</strong></th>
