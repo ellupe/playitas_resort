@@ -111,13 +111,22 @@
     
     <!-- Contacto (con formulario) -->
     <section id="contact" class="contact">
-        <h2>Contáctanos</h2>
-        <form action="#" method="POST">
+        <h2>Recibe más información</h2>
+        <form id="subscriptionForm" action="https://script.google.com/macros/s/AKfycbyawDS1myfcYWrdxIAbg0r-qLTfFkY790ZNpDaE2u0BNeXprUdvkrLtc1p7E0kKDY7d/exec" method="POST" target="hidden_iframe">
             <input type="text" name="name" placeholder="Tu nombre" required>
             <input type="email" name="email" placeholder="Tu correo" required>
-            <textarea name="message" placeholder="Tu mensaje" required></textarea>
-            <button type="submit" class="btn">Enviar</button>
+            <input type="hidden" name="action" value="subscribe">
+            <div style="display: flex; justify-content: center; gap: 10px; margin-top: 10px;">
+                <button type="submit" class="btn">Suscribirse</button>
+                <button type="button" onclick="mostrarCancelarForm()" class="btn cancelar-btn">Cancelar suscripción</button>
+            </div>
         </form>
+        
+        <form id="cancelForm" action="https://script.google.com/macros/s/AKfycbyawDS1myfcYWrdxIAbg0r-qLTfFkY790ZNpDaE2u0BNeXprUdvkrLtc1p7E0kKDY7d/exec" method="POST" target="hidden_iframe" style="display: none;">
+            <input type="hidden" name="action" value="unsubscribe">
+            <input type="email" name="email" placeholder="Introduce tu correo para cancelar suscripción" required>
+            <button type="submit" class="btn cancelar-btn">Confirmar cancelación</button>
+        </form> 
     </section>
 
     <!-- Pie de página -->
@@ -126,5 +135,27 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        document.getElementById('subscriptionForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevenir la redirección tradicional
+            alert("Suscripción enviada con éxito."); // Mensaje de confirmación
+            event.target.submit(); // Enviar el formulario al iframe oculto
+        });
+    </script>
+    
+    <script>
+        // Muestra el formulario de cancelación
+        function mostrarCancelarForm() {
+            document.getElementById('subscriptionForm').style.display = 'none';
+            document.getElementById('cancelForm').style.display = 'block';
+        }
+    
+        // Manejo de cancelación con iframe oculto
+        document.getElementById('cancelForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert("Suscripción cancelada con éxito.");
+        event.target.submit();
+    });
+    </script> 
 </body>
 </html>
