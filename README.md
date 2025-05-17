@@ -130,3 +130,6 @@ El usuario será notificado de la ejecución de estos procesos mediante mensajes
 ### Arquitectura de la aplicación
 
 [Image](https://github.com/user-attachments/assets/1ceb072a-f6bb-495c-b5a8-9f32a0e47996)
+
+![Image](https://github.com/user-attachments/assets/87487518-230a-4cbf-a005-39e6b971809f)
+[Image](https://github.com/user-attachments/assets/87487518-230a-4cbf-a005-39e6b971809f)
