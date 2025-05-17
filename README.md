@@ -57,8 +57,6 @@ Modos de ejecución:
 
     En último lugar, el usuario podrá interactuar con la UI. (Ejemplos mostrados más abajo ↓)
 
-    <br>
-
    - Encender el broker de mensajería.
    - Ejecutar el main de Event-Store-Builder (para el almacenamiento de eventos).
    - Ejecutar el main de Flight-Delay-Estimator (para la carga de históricos y recepción de eventos en tiempo real, junto a la ejecución de la UI).
