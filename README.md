@@ -98,5 +98,5 @@ El Datamart comprobará con procesos programados periódicamente cada cinco minu
 
 El usuario será notificado de la ejecución de estos procesos mediante mensajes de estado generados por el sistema, los cuales reflejan el progreso y los resultados de las tareas programadas.
 
-
+[Image](https://github.com/user-attachments/assets/e54545d6-65e7-4626-92c4-010de398aafe)
 
