@@ -2,6 +2,8 @@
 
 ### Descripción del proyecto y propuesta de valor
 
+FlightDelays es una aplicación desarrollada en Java que permite registrar, procesar y correlacionar datos sobre retrasos de vuelos con las condiciones meteorológicas asociadas a los aeropuertos de origen y destino. El sistema se apoya en una arquitectura híbrida de persistencia que combina el uso de una base de datos relacional SQLite con un sistema de mensajería basado en ActiveMQ, lo que permite desacoplar procesos y facilitar el manejo asíncrono de eventos.
+
 Tecnologías utilizadas:
 - Lenguaje de programación: Java 21
 - Lenguaje auxiliar: Python 3.11.9
@@ -9,8 +11,6 @@ Tecnologías utilizadas:
 - Base de datos: SQLite
 - Mensajería asíncrona: Apache ActiveMQ
 - IDE de desarrollo: IntelliJ IDEA
-
-FlightDelays es una aplicación desarrollada en Java que permite registrar, procesar y correlacionar datos sobre retrasos de vuelos con las condiciones meteorológicas asociadas a los aeropuertos de origen y destino. El sistema se apoya en una arquitectura híbrida de persistencia que combina el uso de una base de datos relacional SQLite con un sistema de mensajería basado en ActiveMQ, lo que permite desacoplar procesos y facilitar el manejo asíncrono de eventos.
 
  --propuesta de valor--
 
