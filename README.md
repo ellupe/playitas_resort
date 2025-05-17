@@ -8,9 +8,6 @@ Este proyecto relaciona los retrasos de los vuelos tanto en los aeropuertos de l
 
 ### Configuración
 
->[!Note]
->Me cago un peo
-
 1. Clonar el proyecto de Github en IntelliJ con la opción de **Repository URL**, pegando el link del repositorio.
 2. Preparar los módulos para su funcionamiento: 
     - Ir al main de AviationStackFeeder:
@@ -31,8 +28,9 @@ Este proyecto relaciona los retrasos de los vuelos tanto en los aeropuertos de l
             - Ruta relativa del archivo CSV de IATAs e ICAOs. (Debe ser obligatoriamente: ```openweathermap-feeder/src/main/resources/iata-icao.csv```)
             - Una apikey **PREMIUM** (Plan Estudiante, Professional o superior), proporcionadad por OpenWeatherMap.
             - Cuatro codigos IATA de aeropuertos, con los que operara el feeder. (Tienen que ser los mismos que se le pasen al otro feeder)*
-    
-    _* Separar con salto de línea_
+
+    >[!IMPORTANT]
+    >_* Separar con salto de línea_
 
 ### Tutorial de ejecución con ejemplos
 
