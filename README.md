@@ -131,6 +131,6 @@ El usuario será notificado de la ejecución de estos procesos mediante mensajes
 
 [Image](https://github.com/user-attachments/assets/1ceb072a-f6bb-495c-b5a8-9f32a0e47996)
 
-![Image](https://github.com/user-attachments/assets/cfc8e3c1-62de-4e25-a2b5-05954e16f1bc)
+![Image](https://github.com/user-attachments/assets/456f992f-c6a0-4869-b70a-77a686a54f0e)
 <br>
-[Image](https://github.com/user-attachments/assets/cfc8e3c1-62de-4e25-a2b5-05954e16f1bc)
+[Image](https://github.com/user-attachments/assets/456f992f-c6a0-4869-b70a-77a686a54f0e)
