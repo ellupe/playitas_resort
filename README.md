@@ -90,10 +90,13 @@ El usuario puede interactuar con la CLI de la siguiente forma:
 - Introduce el IATA del aeropuerto 
 - Introduce si ese aeropuerto se toma como de salida o de llegada
 - Elige el modelo predictivo del que quieras ver el rendimiento (disponibles: ```LinearRegression``` ```KNNRegressor``` son los modelos que mejor se adaptan teóricamente)
-- Elige entre realizar otra consulta (```s```) o cerrar la interfaz (```n```).
+- Elige entre realizar otra consulta (```s```) o cerrar la interfaz (```n```). <br>
 
-![Image](https://github.com/user-attachments/assets/a39c9455-56ad-4aee-845d-9764f9f3d583)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/user-attachments/assets/a39c9455-56ad-4aee-845d-9764f9f3d583" width="650">
+
+El Datamart comprobará con procesos programados periódicamente cada cinco minutos para verificar la incorporación de datos en tiempo real. Adicionalmente, cada treinta minutos se activará un procedimiento de conciliación y emparejamiento de datos entre las distintas fuentes de información, con el objetivo de garantizar su integridad y coherencia.
+
+El usuario será notificado de la ejecución de estos procesos mediante mensajes de estado generados por el sistema, los cuales reflejan el progreso y los resultados de las tareas programadas.
 
 
-![Image](https://github.com/user-attachments/assets/dc2849a0-7443-418c-b97e-5afeb157e415)
 
