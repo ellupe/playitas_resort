@@ -30,9 +30,7 @@ Este proyecto relaciona los retrasos de los vuelos tanto en los aeropuertos de l
             - Cuatro codigos IATA de aeropuertos, con los que operara el feeder. (Tienen que ser los mismos que se le pasen al otro feeder)*
 
 >[!Important]
-> hola
-
-    _* Separar con salto de línea_
+> _* Separar con salto de línea_
 
 ### Tutorial de ejecución con ejemplos
 
