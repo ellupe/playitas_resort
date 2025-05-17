@@ -45,7 +45,7 @@ Tecnologías utilizadas:
 
 ### Tutorial de ejecución con ejemplos
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Modos de ejecución:
+Modos de ejecución:
 
 - **Uso del entorno de mensajería e invocación de la UI:**
 
