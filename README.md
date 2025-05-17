@@ -8,6 +8,9 @@ Este proyecto relaciona los retrasos de los vuelos tanto en los aeropuertos de l
 
 ### Configuración
 
+>[!Note]
+>Me cago un peo
+
 1. Clonar el proyecto de Github en IntelliJ con la opción de **Repository URL**, pegando el link del repositorio.
 2. Preparar los módulos para su funcionamiento: 
     - Ir al main de AviationStackFeeder:
