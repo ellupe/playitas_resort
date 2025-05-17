@@ -59,10 +59,10 @@ Tecnologías utilizadas:
 
     <br>
 
-1. Encender el broker de mensajería.
-2. Ejecutar el main de Event-Store-Builder (para el almacenamiento de eventos).
-3. Ejecutar el main de Flight-Delay-Estimator (para la carga de históricos y recepción de eventos en tiempo real, junto a la ejecución de la UI).
-4. Ejecutar el main de AviationStackFeeder (para el envio automático de información):
+   1. Encender el broker de mensajería.
+   2. Ejecutar el main de Event-Store-Builder (para el almacenamiento de eventos).
+   3. Ejecutar el main de Flight-Delay-Estimator (para la carga de históricos y recepción de eventos en tiempo real, junto a la ejecución de la UI).
+   4. Ejecutar el main de AviationStackFeeder (para el envio automático de información):
         
         ```FlightController controller = new FlightController(new AviationStackProvider(new AviationStackProcessor(Arrays.copyOfRange(args,6,args.length)),new FlightDeserializer(), Arrays.copyOfRange(args,2,6)), new FlightEventStore(args[1],new FlightEventSerializer(),new FlightEventMapper()), new TaskScheduler());```
 
