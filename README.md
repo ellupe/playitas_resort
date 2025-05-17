@@ -28,7 +28,7 @@ Este proyecto relaciona los retrasos de los vuelos tanto en los aeropuertos de l
             - Ruta relativa del archivo CSV de IATAs e ICAOs. (Debe ser obligatoriamente: ```openweathermap-feeder/src/main/resources/iata-icao.csv```)
             - Una apikey **PREMIUM** (Plan Estudiante, Professional o superior), proporcionadad por OpenWeatherMap.
             - Cuatro codigos IATA de aeropuertos, con los que operara el feeder. (Tienen que ser los mismos que se le pasen al otro feeder)*
- 
+    
     _* Separar con salto de línea_
 
 ### Tutorial de ejecución con ejemplos
@@ -82,6 +82,21 @@ Este proyecto relaciona los retrasos de los vuelos tanto en los aeropuertos de l
         ```controller.execute();```
 
 
+### Ejemplos de uso
+
+- AviationStackFeeder:
+    - **Envio de mensajes al broker** (habiendo ejecutado el main en modo ActiveMQ, pasara lo siguiente a la hora programada):
+        
+        [insertar foto]
+
+    - **Guardado de información en SQLite** (habiendo ejecutado el main en modo SQLite, ocurrira esto):
+
+        [insertar foto]
+
+    Esta API podría dar algún error al ejecutar debido a errores internos dentro de la API:
+
+    ![Image](https://github.com/user-attachments/assets/c74e2079-84b4-41ef-905a-8df83070c06c)
+
 
 ### Tutorial de uso de la UI
 
@@ -97,6 +112,3 @@ El usuario puede interactuar con la CLI de la siguiente forma:
 El Datamart comprobará con procesos programados periódicamente cada cinco minutos para verificar la incorporación de datos en tiempo real. Adicionalmente, cada treinta minutos se activará un procedimiento de conciliación y emparejamiento de datos entre las distintas fuentes de información, con el objetivo de garantizar su integridad y coherencia.
 
 El usuario será notificado de la ejecución de estos procesos mediante mensajes de estado generados por el sistema, los cuales reflejan el progreso y los resultados de las tareas programadas.
-
-[Image](https://github.com/user-attachments/assets/e54545d6-65e7-4626-92c4-010de398aafe)
-
