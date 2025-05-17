@@ -93,10 +93,22 @@ Este proyecto relaciona los retrasos de los vuelos tanto en los aeropuertos de l
 
         [insertar foto]
 
-    Esta API podría dar algún error al ejecutar debido a errores internos dentro de la API:
+    Esta API podría dar algún error al ejecutar debido a errores internos dentro de ella, si eso ocurre lo más recomendado es esperar al día siguiente:
 
-    ![Image](https://github.com/user-attachments/assets/c74e2079-84b4-41ef-905a-8df83070c06c)
+    <img src="https://github.com/user-attachments/assets/c74e2079-84b4-41ef-905a-8df83070c06c" width="650">
 
+- OpenWeatherMapFeeder:
+    - **Envio de mensajes al broker**:
+        
+        [insertar foto]
+    
+    - **Guardado de información en SQLite**
+
+        [insertar foto]
+
+- EventStoreBuilder:
+
+    [insertar foto]
 
 ### Tutorial de uso de la UI
 
@@ -112,3 +124,9 @@ El usuario puede interactuar con la CLI de la siguiente forma:
 El Datamart comprobará con procesos programados periódicamente cada cinco minutos para verificar la incorporación de datos en tiempo real. Adicionalmente, cada treinta minutos se activará un procedimiento de conciliación y emparejamiento de datos entre las distintas fuentes de información, con el objetivo de garantizar su integridad y coherencia.
 
 El usuario será notificado de la ejecución de estos procesos mediante mensajes de estado generados por el sistema, los cuales reflejan el progreso y los resultados de las tareas programadas.
+
+### Arquitectura del sistema
+
+### Arquitectura de la aplicación
+
+    [AviationStackFeeder](https://github.com/user-attachments/assets/1ceb072a-f6bb-495c-b5a8-9f32a0e47996)
