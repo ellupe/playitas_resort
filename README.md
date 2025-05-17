@@ -94,3 +94,6 @@ El usuario puede interactuar con la CLI de la siguiente forma:
 
 ![Image](https://github.com/user-attachments/assets/a39c9455-56ad-4aee-845d-9764f9f3d583)
 
+
+![Image](https://github.com/user-attachments/assets/dc2849a0-7443-418c-b97e-5afeb157e415)
+
