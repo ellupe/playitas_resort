@@ -2,14 +2,26 @@
 
 ### Descripción del proyecto y propuesta de valor
 
-Este proyecto relaciona los retrasos de los vuelos tanto en los aeropuertos de llegada como los aeropuertos de salida, con los climas en dichos aeropuertos. 
+Tecnologías utilizadas:
+- Lenguaje de programación: Java 21
+- Lenguaje auxiliar: Python 3.11.9
+- Gestor de dependencias: Apache Maven
+- Base de datos: SQLite
+- Mensajería asíncrona: Apache ActiveMQ
+- IDE de desarrollo: IntelliJ IDEA
 
-### Justificación de la elección de APIs y estructura del Datamart
+FlightDelays es una aplicación desarrollada en Java que permite registrar, procesar y correlacionar datos sobre retrasos de vuelos con las condiciones meteorológicas asociadas a los aeropuertos de origen y destino. El sistema se apoya en una arquitectura híbrida de persistencia que combina el uso de una base de datos relacional SQLite con un sistema de mensajería basado en ActiveMQ, lo que permite desacoplar procesos y facilitar el manejo asíncrono de eventos.
+
+ --propuesta de valor--
+
+### Justificación de la elección de APIs y estructura del Datamart 
 
 ### Configuración
 
-1. Clonar el proyecto de Github en IntelliJ con la opción de **Repository URL**, pegando el link del repositorio.
-2. Preparar los módulos para su funcionamiento: 
+1. Instalar el ActiveMQ en tu equipo.
+2. La aplicación va con python 3.11.9 o superiores y comprobar si esta confidurado en las variables de entorno
+3. Clonar el proyecto de Github en IntelliJ con la opción de **Repository URL**, pegando el link del repositorio.
+4. Preparar los módulos para su funcionamiento: 
     - Ir al main de AviationStackFeeder:
         - **Argumentos en orden (salto de línea para separarlos):** 
             - Ruta absoluta de database.
@@ -125,12 +137,34 @@ El Datamart comprobará con procesos programados periódicamente cada cinco minu
 
 El usuario será notificado de la ejecución de estos procesos mediante mensajes de estado generados por el sistema, los cuales reflejan el progreso y los resultados de las tareas programadas.
 
-### Arquitectura del sistema
+### Arquitecturas del sistema y aplicación
 
-### Arquitectura de la aplicación
 
-[Image](https://github.com/user-attachments/assets/1ceb072a-f6bb-495c-b5a8-9f32a0e47996)
+![Sistema](https://github.com/user-attachments/assets/456f992f-c6a0-4869-b70a-77a686a54f0e)
 
-![Image](https://github.com/user-attachments/assets/456f992f-c6a0-4869-b70a-77a686a54f0e)
-<br>
-[Image](https://github.com/user-attachments/assets/456f992f-c6a0-4869-b70a-77a686a54f0e)
+
+[Diagrama de clases de AviationStackFeeder](https://github.com/user-attachments/assets/1ceb072a-f6bb-495c-b5a8-9f32a0e47996)
+
+[Diagrama de clases de EventStoreBuilder](https://github.com/user-attachments/assets/e63bfc48-98ab-44e7-bdcc-f150614669ee)
+
+[Diagrama de clases de OpenWeatherMapFeeder](https://github.com/user-attachments/assets/646d0868-2ed6-43eb-aceb-1aa0e33c4f02)
+
+### Principios y patrones de diseño aplicados en cada módulo
+
+En los feeders, la arquitectura implementada sigue un diseño modular de tipo hexagonal, lo que permite una clara separación entre el núcleo de la aplicación y sus interfaces externas, como bases de datos, APIs o interfaces de usuario. Esto facilita el desacoplamiento y mejora la flexibilidad del sistema. Cada módulo está diseñado conforme al Single Responsibility Principle, SRP, asegurando que cada componente tenga un propósito bien definido. Esto mejora la mantenibilidad, facilita las pruebas y permite realizar cambios sin afectar otras partes del sistema. Además, se aplica el Open/Closed Principle (OCP), permitiendo que los módulos puedan ser extendidos con nuevas funcionalidades sin necesidad de modificar el código existente, favoreciendo así la escalabilidad y el mantenimiento del sistema. 
+
+Ejemplos de OCP:
+
+```
+public interface FlightStore {
+    public void saveFlights (FlightResponse flightResponse);
+}
+```
+```
+public interface FlightProvider {
+    FlightResponse flightProvider(String airportType, String airportIata);
+    String[] getPreferredAirports();
+}
+```
+
+Estas interfaces permiten que se puedan añadir nuevas tecnologías al código si surgiese la necesidad; y no haría falta modificar el resto del código. Por ejemplo, una implementación de FlightStore para guardar datos en Oracle o MySQL. Esta dinámica es idéntica en el otro feeder. Asimismo, se podría introducir otra tecnología de recolección de datos que no sea mediante APIs.
