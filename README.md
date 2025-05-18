@@ -170,7 +170,7 @@ El usuario será notificado de la ejecución de estos procesos mediante mensajes
 ![Sistema](https://github.com/user-attachments/assets/456f992f-c6a0-4869-b70a-77a686a54f0e)
 
 
-[Diagrama de clases de AviationStackFeeder](https://github.com/user-attachments/assets/f176fac7-da00-4e46-a8d4-e8b06907bca6)
+[Diagrama de clases de AviationStackFeeder](https://github.com/user-attachments/assets/60d50096-83be-4934-a2a0-37c6718cf4ea)
 
 [Diagrama de clases de EventStoreBuilder](https://github.com/user-attachments/assets/8c222436-84d9-4061-a934-0685b0343103)
 
