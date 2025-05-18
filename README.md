@@ -1,4 +1,4 @@
-# FlightDelays
+# FLIGHTDELAYS®
 
 ### Descripción del proyecto y propuesta de valor
 
@@ -30,9 +30,10 @@ La estructura del Datamart planteada ofrece una serie de ventajas clave que just
 ### Configuración
 
 1. Instalar el ActiveMQ en tu equipo.
-2. Es necesario tener instalado Python (v3.11.9 o superiores). También debe estar definido como variable de entorno del sistema.
-3. Clonar el proyecto de Github en IntelliJ con la opción de **Repository URL**, pegando el link del repositorio.
-4. Preparar los módulos para su funcionamiento: 
+2. Es necesario tener instalado Python (v3.11.9 o superiores). También debe estar definido como variable de entorno del sistema
+3. Maven debe poder ejecutarse en IntelliJ. Si diese error, reinstalar Maven, agregar variables del sistema y ejecutar en IntelliJ ```mvn clean install```. 
+5. Clonar el proyecto de Github en IntelliJ con la opción de **Repository URL**, pegando el link del repositorio.
+6. Preparar los módulos para su funcionamiento: 
     - Ir al main de AviationStackFeeder:
         - **Argumentos en orden (salto de línea para separarlos):** 
             - Ruta absoluta de database.
@@ -43,7 +44,15 @@ La estructura del Datamart planteada ofrece una serie de ventajas clave que just
         - **Argumentos en orden (salto de línea para separarlos):** 
             - Enlace URL de conexión TCP del broker de ActiveMQ.
             - Tópicos del broker de mensajería de ActiveMQ. (Obligatoriamente deben ser: ```Flights``` y ```Weather```)*
-    - Ir al main de Flight-Delay-Estimator
+    - Ir al main de Flight-Delay-Estimator:
+        - **Argumentos en orden (salto de línea para separarlos):**
+            - Ruta relativa del histórico de vuelos.
+            - Ruta relativa del histórico de climas.
+            - Ruta absoluta del cvs para guardar los archivos matcheados.
+            - Enlace URL de conexión TCP del broker de ActiveMQ.
+            - Tópicos del broker de mensajería de ActiveMQ.
+            - Rute relativa de csv crudos. (tienen que ser obligatoriamente: ```flight-delay-estimator/src/main/resources/datamart-partition-for-raw-flights.csv``` y ```flight-delay-estimator/src/main/resources/datamart-partition-for-raw-weather.csv```)*
+            - Ruta absoluta para guardar datos procesados.
     - Ir al main de OpenWeatherMapFeeder:
         - **Argumentos en orden (salto de línea para separarlos):** 
             - Ruta absoluta de database.
@@ -68,10 +77,12 @@ Modos de ejecución:
 
     En último lugar, el usuario podrá interactuar con la UI. (Ejemplos mostrados más abajo ↓)
 
-   - Encender el broker de mensajería.
-   - Ejecutar el main de Event-Store-Builder (para el almacenamiento de eventos).
-   - Ejecutar el main de Flight-Delay-Estimator (para la carga de históricos y recepción de eventos en tiempo real, junto a la ejecución de la UI).
-   - Ejecutar el main de AviationStackFeeder (para el envio automático de información):
+    <br>
+
+    - Encender el broker de mensajería.
+    - Ejecutar el main de Event-Store-Builder (para el almacenamiento de eventos).
+    - Ejecutar el main de Flight-Delay-Estimator (para la carga de históricos y recepción de eventos en tiempo real, junto a la ejecución de la UI).
+    - Ejecutar el main de AviationStackFeeder (para el envio automático de información):
         
         ```FlightController controller = new FlightController(new AviationStackProvider(new AviationStackProcessor(Arrays.copyOfRange(args,6,args.length)),new FlightDeserializer(), Arrays.copyOfRange(args,2,6)), new FlightEventStore(args[1],new FlightEventSerializer(),new FlightEventMapper()), new TaskScheduler());```
 
@@ -90,13 +101,13 @@ Modos de ejecución:
 
     <br>
 
-    1. Ejecutar el main de AviationStackFeeder:
+    - Ejecutar el main de AviationStackFeeder:
 
         ```FlightController controller = new FlightController(new AviationStackProvider(new AviationStackProcessor(Arrays.copyOfRange(args,6,args.length)),new FlightDeserializer(), Arrays.copyOfRange(args,2,6)), new FlightSQLStore(args[0],new SQLConnection(),new SQLModifierFlights(), new FlightModelMapper()), new TaskScheduler());```
 
         ```controller.execute();```
 
-    2. Ejecutar el main de OpenWeatherMapFeeder:
+    - Ejecutar el main de OpenWeatherMapFeeder:
 
         ```WeatherController controller = new WeatherController(new OpenWeatherMapProvider(new OpenWeatherMapProcessor(args[3]),new WeatherDeserializer(), Arrays.copyOfRange(args,4,args.length)), new WeatherSQLStore(args[0],new SQLModifierWeather(), new SQLConnection(), new WeatherResultMapper()), new TaskScheduler(), new AirportToCoordinates(args[2]), new UnixUtils());```
 
@@ -108,11 +119,11 @@ Modos de ejecución:
 - AviationStackFeeder:
     - **Envio de mensajes al broker** (habiendo ejecutado el main en modo ActiveMQ, pasara lo siguiente a la hora programada):
         
-        [insertar foto]
+        ![Image](https://github.com/user-attachments/assets/0d853e87-d90d-4194-beaa-0ce11703bbc4)
 
     - **Guardado de información en SQLite** (habiendo ejecutado el main en modo SQLite, ocurrira esto):
 
-        [insertar foto]
+        ![Image](https://github.com/user-attachments/assets/83099898-d8a1-4f29-b0f3-8f040fe035e4)
 
     Esta API podría dar algún error al ejecutar debido a errores internos dentro de ella, si eso ocurre lo más recomendado es esperar al día siguiente:
 
@@ -121,15 +132,15 @@ Modos de ejecución:
 - OpenWeatherMapFeeder:
     - **Envio de mensajes al broker**:
         
-        [insertar foto]
+        ![Image](https://github.com/user-attachments/assets/9dae77d9-9d24-4b02-b7da-142be5133b32)
     
     - **Guardado de información en SQLite**
 
-        [insertar foto]
+        ![Image](https://github.com/user-attachments/assets/6e146a50-9df4-4d0a-93b9-579e9d5184d3)
 
 - EventStoreBuilder:
 
-    [insertar foto]
+    ![Image](https://github.com/user-attachments/assets/58c21017-5707-4b22-8d90-dfd4b84eee99)
 
 ### Tutorial de uso de la UI
 
@@ -138,7 +149,7 @@ El usuario puede interactuar con la CLI de la siguiente forma:
 - Introduce el IATA del aeropuerto 
 - Introduce si ese aeropuerto se toma como de salida o de llegada
 - Elige el modelo predictivo del que quieras ver el rendimiento (disponibles: ```LinearRegression``` ```KNNRegressor``` son los modelos que mejor se adaptan teóricamente)
-- Elige entre realizar otra consulta (```s```) o cerrar la interfaz (```n```). <br>
+- Elige entre realizar otra consulta (```s```) o cerrar la interfaz (```n```), después de esta consulta; en caso de querer realizar otra consulta, actualiza el Datamart con los eventos a tiempo real. <br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/user-attachments/assets/a39c9455-56ad-4aee-845d-9764f9f3d583" width="650">
 
@@ -177,3 +188,4 @@ public interface FlightProvider {
 ```
 
 Estas interfaces permiten que se puedan añadir nuevas tecnologías al código si surgiese la necesidad; y no haría falta modificar el resto del código. Por ejemplo, una implementación de FlightStore para guardar datos en Oracle o MySQL. Esta dinámica es idéntica en el otro feeder. Asimismo, se podría introducir otra tecnología de recolección de datos que no sea mediante APIs.
+
