@@ -47,11 +47,11 @@ La estructura del Datamart planteada ofrece una serie de ventajas clave que just
             - Tópicos del broker de mensajería de ActiveMQ. (Obligatoriamente deben ser: ```Flights``` y ```Weather```)*
     - Ir al main de Flight-Delay-Estimator:
         - **Argumentos en orden (salto de línea para separarlos):**
-            - Ruta relativa del histórico de vuelos.
-            - Ruta relativa del histórico de climas.
+            - Ruta relativa del histórico de vuelos (obligatoriamente: ```eventstore/Flights/AviationStackFeeder```).
+            - Ruta relativa del histórico de climas (obligatoriamente: ```eventstore/Weather/OpenWeatherMapFeeder```).
             - Ruta absoluta del CSV para guardar los archivos matcheados.
             - Enlace URL de conexión TCP del broker de ActiveMQ.
-            - Tópicos del broker de mensajería de ActiveMQ.
+            - Tópicos del broker de mensajería de ActiveMQ (obligatoriamente deben ser: ```Flights``` y ```Weather```)*
             - Rute relativa de CSVs crudos. (tienen que ser obligatoriamente: ```flight-delay-estimator/src/main/resources/datamart-partition-for-raw-flights.csv``` y ```flight-delay-estimator/src/main/resources/datamart-partition-for-raw-weather.csv```)*
             - Ruta absoluta para guardar datos procesados.
     - Ir al main de OpenWeatherMapFeeder:
@@ -94,13 +94,13 @@ Modos de ejecución:
     - Ejecutar el main de Flight-Delay-Estimator (para la carga de históricos y recepción de eventos en tiempo real, junto a la ejecución de la UI).
     - Ejecutar el main de AviationStackFeeder (para el envio automático de información):
         
-        ```FlightController controller = new FlightController(new AviationStackProvider(new AviationStackProcessor(Arrays.copyOfRange(args,6,args.length)),new FlightDeserializer(), Arrays.copyOfRange(args,2,6)), new FlightEventStore(args[1],new FlightEventSerializer(),new FlightEventMapper()), new TaskScheduler());```
+        ```FlightController controller = new FlightController(new AviationStackProvider(new AviationStackProcessor(Arrays.copyOfRange(args,6,args.length)),new FlightJSONParser(), Arrays.copyOfRange(args,2,6)), new FlightEventStore(args[1],new FlightEventSerializer(),new FlightEventMapper()), new TaskScheduler());```
 
         ```controller.execute();```
 
     - Ejecutar el main de OpenWeatherMapFeeder:
 
-        ```WeatherController controller = new WeatherController(new OpenWeatherMapProvider(new OpenWeatherMapProcessor(args[3]),new WeatherDeserializer(), Arrays.copyOfRange(args,4,args.length)), new WeatherEventStore(args[1],new WeatherEventMapper(),new WeatherEventSerializer()), new TaskScheduler(), new AirportToCoordinates(args[2]), new UnixUtils());```
+        ```WeatherController controller = new WeatherController(new OpenWeatherMapProvider(new OpenWeatherMapProcessor(args[3]),new WeatherJSONParser(), Arrays.copyOfRange(args,4,args.length)), new WeatherEventStore(args[1],new WeatherEventMapper(),new WeatherEventSerializer()), new TaskScheduler(), new AirportToCoordinates(args[2]), new UnixUtils());```
 
         ```controller.execute();```
 
@@ -111,13 +111,13 @@ Modos de ejecución:
 
     - Ejecutar el main de AviationStackFeeder:
 
-        ```FlightController controller = new FlightController(new AviationStackProvider(new AviationStackProcessor(Arrays.copyOfRange(args,6,args.length)),new FlightDeserializer(), Arrays.copyOfRange(args,2,6)), new FlightSQLStore(args[0],new SQLConnection(),new SQLModifierFlights(), new FlightModelMapper()), new TaskScheduler());```
+        ```FlightController controller = new FlightController(new AviationStackProvider(new AviationStackProcessor(Arrays.copyOfRange(args,6,args.length)),new FlightJSONParser(), Arrays.copyOfRange(args,2,6)), new FlightSQLStore(args[0],new SQLConnection(),new SQLModifierFlights(), new FlightModelMapper()), new TaskScheduler());```
 
         ```controller.execute();```
 
     - Ejecutar el main de OpenWeatherMapFeeder:
 
-        ```WeatherController controller = new WeatherController(new OpenWeatherMapProvider(new OpenWeatherMapProcessor(args[3]),new WeatherDeserializer(), Arrays.copyOfRange(args,4,args.length)), new WeatherSQLStore(args[0],new SQLModifierWeather(), new SQLConnection(), new WeatherResultMapper()), new TaskScheduler(), new AirportToCoordinates(args[2]), new UnixUtils());```
+        ```WeatherController controller = new WeatherController(new OpenWeatherMapProvider(new OpenWeatherMapProcessor(args[3]),new WeatherJSONParser(), Arrays.copyOfRange(args,4,args.length)), new WeatherSQLStore(args[0],new SQLModifierWeather(), new SQLConnection(), new WeatherResultMapper()), new TaskScheduler(), new AirportToCoordinates(args[2]), new UnixUtils());```
 
         ```controller.execute();```
 
