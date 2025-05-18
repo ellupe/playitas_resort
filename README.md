@@ -13,7 +13,7 @@ Tecnologías utilizadas:
 - IDE de desarrollo: IntelliJ IDEA
 
 El valor que se aporta específicamente al usuario se trata de una UI, a la que es posible hacerle consultas sobre el rendimiento de determinados clasificadores
-(predictores), que tomen las condiciones climáticas de aeropuertos; e intenten explicar los retrasos de vuelos mediante las mismas. De esta manera, si algún modelo alcanzase un valor de error lo suficientemente pequeño al haberse entrenado con una cantidad de registros considerable, querrá decir que sería capaz de hacer predicciones sobre retrasos con un grado de precisión considerable. El usuario será capaz de elegir e
+(predictores), que tomen las condiciones climáticas de aeropuertos; e intenten explicar los retrasos de vuelos mediante las mismas. De esta manera, si algún modelo alcanzase un valor de error lo suficientemente pequeño al haberse entrenado con una cantidad de registros considerable, querrá decir que sería capaz de hacer predicciones sobre retrasos con un grado de precisión considerable. El usuario será capaz de elegir el aeropuerto y si se considera de llegada o salida (tal vez el clima afecte más si se aterrizase en ese aeropuerto que si se despegase), y cuál de los modelos disponibles se entrenará.
 
 ### Justificación de la elección de APIs y estructura del Datamart 
 
