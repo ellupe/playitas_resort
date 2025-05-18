@@ -158,7 +158,7 @@ El usuario puede interactuar con la CLI de la siguiente forma:
 - Elige el modelo predictivo del que quieras ver el rendimiento (disponibles: ```LinearRegression``` ```KNNRegressor``` son los modelos que mejor se adaptan teóricamente)
 - Elige entre realizar otra consulta (```s```) o cerrar la interfaz (```n```), después de esta consulta; en caso de querer realizar otra consulta, actualiza el Datamart con los eventos a tiempo real. <br>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/user-attachments/assets/a39c9455-56ad-4aee-845d-9764f9f3d583" width="650">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/user-attachments/assets/2a0b9e9c-67f8-4e9d-848b-3588bed3f22a" width="650">
 
 El Datamart comprobará con procesos programados periódicamente cada cinco minutos para verificar la incorporación de datos en tiempo real. Adicionalmente, cada treinta minutos se activará un procedimiento de conciliación y emparejamiento de datos entre las distintas fuentes de información, con el objetivo de garantizar su integridad y coherencia.
 
