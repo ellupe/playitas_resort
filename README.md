@@ -13,7 +13,7 @@ Tecnologías utilizadas:
 - IDE de desarrollo: IntelliJ IDEA
 
 El valor que se aporta específicamente al usuario se trata de una UI, a la que es posible hacerle consultas sobre el rendimiento de determinados clasificadores
-(predictores), que tomen las condiciones climáticas de aeropuertos; e intenten explicar los retrasos de vuelos mediante las mismas. De esta manera, si algún modelo alcanzase un valor de error lo suficientemente pequeño al haberse entrenado con una cantidad de registros considerable, querrá decir que sería capaz de hacer predicciones sobre retrasos con un grado de precisión considerable. El usuario será capaz de elegir el aeropuerto y si se considera de llegada o salida (tal vez el clima afecte más si se aterrizase en ese aeropuerto que si se despegase), y cuál de los modelos disponibles se entrenará.
+(predictores), que tomen las condiciones climáticas de aeropuertos; e intenten explicar los retrasos de vuelos mediante las mismas. De esta manera, si algún modelo alcanzase un valor de error lo suficientemente pequeño al haberse entrenado con una cantidad de registros considerable, querrá decir que sería capaz de hacer predicciones sobre retrasos con un grado de precisión considerable. El usuario será capaz de elegir el aeropuerto y si se considera de llegada o salida (tal vez el clima afecte más en el retraso de un aterrizaje que en el de un despegue), y cuál de los modelos disponibles se entrenará.
 
 ### Justificación de la elección de APIs y estructura del Datamart 
 
@@ -197,3 +197,14 @@ public interface FlightProvider {
 
 Estas interfaces permiten que se puedan añadir nuevas tecnologías al código si surgiese la necesidad; y no haría falta modificar el resto del código. Por ejemplo, una implementación de FlightStore para guardar datos en Oracle o MySQL. Esta dinámica es idéntica en el otro feeder. Asimismo, se podría introducir otra tecnología de recolección de datos que no sea mediante APIs.
 
+En el EventStoreBuilder, se sigue también una arquitectura hexagonal; aunque no se aprecia al consistir de un número de clases muy pequeño.
+
+En último lugar, el módulo de la unidad de negocio (FlightDelayEstimator) sigue una estructura similar a la hexagonal. Se refleja el OCP en la siguiente interfaz:
+
+```
+public interface ProcessInvoker {
+    public void executeExternalProcess() throws IOException, InterruptedException;
+}
+```
+
+El OpenClosedPrinciple permitiría introducir un proceso de análisis de datos diferente si se desease en el futuro, sin cambiar demasiado código (por ejemplo, un proceso en R u otro lenguaje).
