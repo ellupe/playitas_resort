@@ -1,4 +1,4 @@
-# FLIGHTDELAYS®
+# FLIGHTDELAYS
 
 ### Descripción del proyecto y propuesta de valor
 
