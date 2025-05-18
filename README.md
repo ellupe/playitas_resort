@@ -129,8 +129,8 @@ Modos de ejecución:
         <img src="https://github.com/user-attachments/assets/0d853e87-d90d-4194-beaa-0ce11703bbc4" width="700">
 
     - **Guardado de información en SQLite** (habiendo ejecutado el main en modo SQLite, ocurrira esto):
-
-      <img src="https://github.com/user-attachments/assets/83099898-d8a1-4f29-b0f3-8f040fe035e4" width="700">
+      
+      <img src="https://github.com/user-attachments/assets/d35901fc-ba87-4657-a2d0-fe37215a8a88" width="700">
 
     Esta API podría dar algún error al ejecutar debido a errores internos dentro de ella, si eso ocurre lo más recomendado es esperar al día siguiente:
 
