@@ -65,13 +65,13 @@ La estructura del Datamart planteada ofrece una serie de ventajas clave que just
 
 Si tiene pensado hace test tanto de AviationStackFeeder como de OpenWeatherMapFeeder, hacer lo siguiente:
 - AviationStackFeeder:
-   1. Crear la carpeta ```test/resources```.
-   2. Crear ```Apikeys.txt``` con varias claves, la primera debe ser válida.
-   3. Crear ```ApiKeysFake.txt``` con varias claves, la primera no debe ser válida.
+   - Crear la carpeta ```test/resources```.
+   - Crear ```Apikeys.txt``` con varias claves, la primera debe ser válida.
+   - Crear ```ApiKeysFake.txt``` con varias claves, la primera no debe ser válida.
 - OpenWeatherMapFeeder:
-   1. Crear la carpeta ```test/resources```.
-   2. Descargar el ```iata-icao.csv``` y moverlo fuera del proyecto.
-   3. Crear ```apikey.txt``` con apikey válida y seguida una ruta absoluta al CSV del ```iata-icao.csv```.
+   - Crear la carpeta ```test/resources```.
+   - Descargar el ```iata-icao.csv``` y moverlo fuera del proyecto.
+   - Crear ```apikey.txt``` con apikey válida y seguida una ruta absoluta al CSV del ```iata-icao.csv```.
 
 
 ### Tutorial de ejecución con ejemplos
