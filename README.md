@@ -30,15 +30,15 @@ La estructura del Datamart planteada ofrece una serie de ventajas clave que just
 ### Configuración
 
 1. Instalar el ActiveMQ en tu equipo.
-2. Es necesario tener instalado Python (v3.11.9 o superiores). También debe estar definido como variable de entorno del sistema
-3. Maven debe poder ejecutarse en IntelliJ. Si diese error, reinstalar Maven, agregar variables del sistema y ejecutar en IntelliJ ```mvn clean install```. 
+2. Es necesario tener instalado Python (v3.11.9 o superiores). También debe estar definido como variable de entorno del sistema.
+3. Maven debe poder ejecutarse en IntelliJ. Si diese error, reinstalar Maven, agregar a variables del sistema y ejecutar en IntelliJ ```mvn clean install```. 
 5. Clonar el proyecto de Github en IntelliJ con la opción de **Repository URL**, pegando el link del repositorio.
 6. Preparar los módulos para su funcionamiento: 
     - Ir al main de AviationStackFeeder:
         - **Argumentos en orden (salto de línea para separarlos):** 
             - Ruta absoluta de database.
             - Enlace URL de conexión TCP del broker de ActiveMQ. (Ejemplo: ```tcp://localhost:12345```)
-            - Cuatro codigos IATA de aeropuertos, con los que operara el feeder. (Ejemplos: ```MAD``` ```AMS``` ```JFK``` ```ZRH```)*
+            - Cuatro códigos IATA de aeropuertos, con los que operará el feeder. (Ejemplos: ```MAD``` ```AMS``` ```JFK``` ```ZRH```)*
             - Número indefinido, elegido por el consumidor, de apiKeys de AviationStack.*
     - Ir al main de Event-Store-Builder:
         - **Argumentos en orden (salto de línea para separarlos):** 
@@ -48,22 +48,22 @@ La estructura del Datamart planteada ofrece una serie de ventajas clave que just
         - **Argumentos en orden (salto de línea para separarlos):**
             - Ruta relativa del histórico de vuelos.
             - Ruta relativa del histórico de climas.
-            - Ruta absoluta del cvs para guardar los archivos matcheados.
+            - Ruta absoluta del CSV para guardar los archivos matcheados.
             - Enlace URL de conexión TCP del broker de ActiveMQ.
             - Tópicos del broker de mensajería de ActiveMQ.
-            - Rute relativa de csv crudos. (tienen que ser obligatoriamente: ```flight-delay-estimator/src/main/resources/datamart-partition-for-raw-flights.csv``` y ```flight-delay-estimator/src/main/resources/datamart-partition-for-raw-weather.csv```)*
+            - Rute relativa de CSVs crudos. (tienen que ser obligatoriamente: ```flight-delay-estimator/src/main/resources/datamart-partition-for-raw-flights.csv``` y ```flight-delay-estimator/src/main/resources/datamart-partition-for-raw-weather.csv```)*
             - Ruta absoluta para guardar datos procesados.
     - Ir al main de OpenWeatherMapFeeder:
         - **Argumentos en orden (salto de línea para separarlos):** 
             - Ruta absoluta de database.
             - Enlace URL de conexión TCP del broker de ActiveMQ.
             - Ruta relativa del archivo CSV de IATAs e ICAOs. (Debe ser obligatoriamente: ```openweathermap-feeder/src/main/resources/iata-icao.csv```)
-            - Una apikey **PREMIUM** (Plan Estudiante, Professional o superior), proporcionadad por OpenWeatherMap.
-            - Cuatro codigos IATA de aeropuertos, con los que operara el feeder. (Tienen que ser los mismos que se le pasen al otro feeder)*
+            - Una apikey **PREMIUM** (Plan Estudiante, Professional o superior), proporcionada por OpenWeatherMap.
+            - Cuatro códigos IATA de aeropuertos, con los que operará el feeder. (Tienen que ser los mismos que se le pasen al otro feeder)*
     
     _* Separar con salto de línea_
 
-Si tiene pensado hace test tanto de AviationStackFeeder como de OpenWeatherMapFeeder, hacer lo siguiente:
+Si tiene pensado hacer test tanto de AviationStackFeeder como de OpenWeatherMapFeeder, hacer lo siguiente:
 - AviationStackFeeder:
    - Crear la carpeta ```test/resources```.
    - Crear ```Apikeys.txt``` con varias claves, separadas por espacios, la primera debe ser válida.
@@ -71,7 +71,7 @@ Si tiene pensado hace test tanto de AviationStackFeeder como de OpenWeatherMapFe
 - OpenWeatherMapFeeder:
    - Crear la carpeta ```test/resources```.
    - Descargar el ```iata-icao.csv``` y moverlo fuera del proyecto.
-   - Crear ```apikey.txt``` con apikey válida y separado con un espacio la ruta absoluta al CSV del ```iata-icao.csv```.
+   - Crear ```apikey.txt``` con apikey válida, y separado con un espacio, la ruta absoluta al CSV del ```iata-icao.csv```.
 
 
 ### Tutorial de ejecución con ejemplos
