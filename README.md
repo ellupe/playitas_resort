@@ -77,8 +77,6 @@ Modos de ejecución:
 
     En último lugar, el usuario podrá interactuar con la UI. (Ejemplos mostrados más abajo ↓)
 
-    <br>
-
     - Encender el broker de mensajería.
     - Ejecutar el main de Event-Store-Builder (para el almacenamiento de eventos).
     - Ejecutar el main de Flight-Delay-Estimator (para la carga de históricos y recepción de eventos en tiempo real, junto a la ejecución de la UI).
@@ -93,13 +91,11 @@ Modos de ejecución:
         ```WeatherController controller = new WeatherController(new OpenWeatherMapProvider(new OpenWeatherMapProcessor(args[3]),new WeatherDeserializer(), Arrays.copyOfRange(args,4,args.length)), new WeatherEventStore(args[1],new WeatherEventMapper(),new WeatherEventSerializer()), new TaskScheduler(), new AirportToCoordinates(args[2]), new UnixUtils());```
 
         ```controller.execute();```
-    <br><br>
 
 - **Guardado en SQLite:**
 
     Almacena en una base de datos de SQLite la información proveniente de las APIs (no se hace uso del Datamart, ni del EventStore, ni de la UI; simplemente escribe en la database).
 
-    <br>
 
     - Ejecutar el main de AviationStackFeeder:
 
