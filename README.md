@@ -114,29 +114,29 @@ Modos de ejecución:
 
 - AviationStackFeeder:
     - **Envio de mensajes al broker** (habiendo ejecutado el main en modo ActiveMQ, pasara lo siguiente a la hora programada):
-        
-        ![Image](https://github.com/user-attachments/assets/0d853e87-d90d-4194-beaa-0ce11703bbc4)
+  
+        <img src="https://github.com/user-attachments/assets/0d853e87-d90d-4194-beaa-0ce11703bbc4" width="700">
 
     - **Guardado de información en SQLite** (habiendo ejecutado el main en modo SQLite, ocurrira esto):
 
-        ![Image](https://github.com/user-attachments/assets/83099898-d8a1-4f29-b0f3-8f040fe035e4)
+      <img src="https://github.com/user-attachments/assets/83099898-d8a1-4f29-b0f3-8f040fe035e4" width="700">
 
     Esta API podría dar algún error al ejecutar debido a errores internos dentro de ella, si eso ocurre lo más recomendado es esperar al día siguiente:
 
-    <img src="https://github.com/user-attachments/assets/c74e2079-84b4-41ef-905a-8df83070c06c" width="650">
+    <img src="https://github.com/user-attachments/assets/c74e2079-84b4-41ef-905a-8df83070c06c" width="700">
 
 - OpenWeatherMapFeeder:
     - **Envio de mensajes al broker**:
         
-        ![Image](https://github.com/user-attachments/assets/9dae77d9-9d24-4b02-b7da-142be5133b32)
+      <img src="https://github.com/user-attachments/assets/9dae77d9-9d24-4b02-b7da-142be5133b32" width="700">
     
     - **Guardado de información en SQLite**
 
-        ![Image](https://github.com/user-attachments/assets/6e146a50-9df4-4d0a-93b9-579e9d5184d3)
+      <img src="https://github.com/user-attachments/assets/6e146a50-9df4-4d0a-93b9-579e9d5184d3" width="700">
 
 - EventStoreBuilder:
 
-    ![Image](https://github.com/user-attachments/assets/58c21017-5707-4b22-8d90-dfd4b84eee99)
+  <img src="https://github.com/user-attachments/assets/58c21017-5707-4b22-8d90-dfd4b84eee99" width="700">
 
 ### Tutorial de uso de la UI
 
