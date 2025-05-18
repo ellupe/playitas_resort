@@ -1,8 +1,8 @@
-# FLIGHTDELAYS®
+# FLIGHTDELAYS
 
 ### Descripción del proyecto y propuesta de valor
 
-FlightDelays es una aplicación desarrollada en Java que permite registrar, procesar y correlacionar datos sobre retrasos de vuelos con las condiciones meteorológicas asociadas a los aeropuertos de origen y destino. El sistema se apoya en una arquitectura híbrida de persistencia que combina el uso de una base de datos relacional SQLite con un sistema de mensajería basado en ActiveMQ, lo que permite desacoplar procesos y facilitar el manejo asíncrono de eventos.
+FlightDelays es una aplicación desarrollada en Java que permite registrar, procesar y correlacionar datos sobre retrasos de vuelos con las condiciones meteorológicas asociadas a los aeropuertos de origen y destino. El sistema se basa principalmente en ActiveMQ como núcleo de su arquitectura, utilizando esta plataforma de mensajería para desacoplar procesos y gestionar eventos de forma asíncrona. Adicionalmente, cuenta con un mecanismo opcional de persistencia de datos mediante SQLite, que puede ser utilizado según las necesidades del entorno o configuración.
 
 Tecnologías utilizadas:
 - Lenguaje de programación: Java 21
@@ -15,6 +15,17 @@ Tecnologías utilizadas:
  --propuesta de valor--
 
 ### Justificación de la elección de APIs y estructura del Datamart 
+
+La API utilizada para recabar información sobre el tráfico aéreo es AviationStackAPI, seleccionada por su amplio alcance de datos a nivel global. Además, permite obtener información detallada sobre vuelos, aeropuertos, aerolíneas y estados de vuelos, lo cual es fundamental para el análisis de retrasos y su correlación con condiciones externas.
+
+Para los datos meteorológicos, se integró la API de OpenWeatherMap, que proporciona datos históricos y en tiempo real sobre el clima en ubicaciones específicas, permitiendo así una correlación efectiva entre el estado del tiempo y los retrasos en vuelos. 
+
+**La estructura de datamart planteada es la siguiente:** 
+- Particiones para eventos recibidos en tiempo real: 2 archivos CSV, que se encargan de almacenar la información que envíe el broker en tiempo real (1 archivo por tópico implementado; en este caso, Flights y Weather). Cuentan con un campo de marca temporal, para gestionar la asincronía y realizar matching de forma óptima; y otro campo donde se guardan los eventos provenientes del broker en formato crudo (como json).
+- Partición limpia (con matching aplicado): 1 archivo CSV, que representa la información valiosa a la que posteriormente se le hará análisis (via Python); también se le puede ver como el resultado de emparejar eventos de vuelos y climas que sean compatibles (con esto se refiere a que tengan registros temporales muy cercanos en el tiempo), ya sea su fuente un histórico o las particiones para eventos en tiempo real.
+- Partición procesada: Es el resultado del análisis de Python efectuado a la partición limpia. Contiene toda la información que le pudiese ser útil al usuario; que podrá ser accesible mediante la UI.
+
+La estructura del Datamart planteada ofrece una serie de ventajas clave que justifican su diseño. En primer lugar, destaca por su modularidad, ya que cada etapa del flujo de datos —captura, transformación y análisis— está claramente separada, lo que facilita tanto el mantenimiento como la identificación y corrección de errores. Además, la arquitectura es escalable, permitiendo que componentes específicos, como el proceso de emparejamiento de eventos (matching), puedan evolucionar o ampliarse sin impactar el funcionamiento del resto del sistema. Esta separación de responsabilidades también aporta una alta flexibilidad, ya que permite modificar o reemplazar herramientas o tecnologías (por ejemplo, sustituir el motor de análisis en Python por otro) sin necesidad de rediseñar la solución completa. Por último, se logra una mayor robustez frente a fallos gracias al almacenamiento intermedio en archivos CSV, que actúan como puntos de control persistentes, permitiendo la recuperación o reprocesamiento de los datos ante interrupciones o errores inesperados. Esta combinación de características hace que la arquitectura sea sólida, mantenible y adaptable a distintos contextos y requerimientos.
 
 ### Configuración
 
